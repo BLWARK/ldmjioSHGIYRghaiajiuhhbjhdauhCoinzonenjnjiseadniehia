@@ -22,6 +22,7 @@ const CryptoWidget = () => {
       displayMode: "adaptive",
       colorTheme: "light",
       locale: "en",
+      
     });
 
     document

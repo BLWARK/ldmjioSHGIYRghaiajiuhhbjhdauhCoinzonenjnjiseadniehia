@@ -16,8 +16,9 @@ const Navbar = () => {
     <div className="w-full">
       {/* Top Bar */}
       <div className="bg-main flex justify-center items-center text-white 2xl:h-[150px] h-[80px]">
-        <div className="w-full flex justify-between items-center py-4 px-6 md:px-8 2xl:px-50 xl:px-48 lg:px-48">
-        <div className="lg:hidden flex items-center">
+        <div className="w-full flex justify-between items-center py-4 px-6 md:px-8 2xl:px-52 xl:px-12 lg:px-12">
+          {/* Mobile Hamburger */}
+        <div className="2xl:hidden xl:flex lg:flex md:flex flex items-center cursor-pointer">
             <HamburgerMenu
               isOpen={isOpen}
               menuClicked={() => setIsOpen(!isOpen)} // Toggle menu
@@ -41,10 +42,10 @@ const Navbar = () => {
                 className="object-contain 2xl:object-cover"
               />
             </div>
-             {/* Mobile Hamburger */}
+             
           </a>
              {/* Logo */}
-             <div className="flex-1 flex justify-center lg:justify-start">
+             <div className="flex-1  justify-center lg:justify-start 2xl:hidden xl:flex lg:flex md:flex flex">
             <Image
               src="/Logo.png"
               alt="Logo"
@@ -55,8 +56,8 @@ const Navbar = () => {
             />
           </div>
           {/* Desktop Subscribe Section */}
-          <div className="hidden lg:flex flex-col items-start gap-2">
-            <span className="font-semibold text-[32px]">Subscribe CoinZone</span>
+          <div className="hidden 2xl:flex xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6">
+            <span className="font-semibold text-[28px]">Subscribe CoinZone</span>
             <span className="text-sm">Get exclusive content just $200/month</span>
             <FiArrowRight size={24} className="mt-4" />
           </div>
@@ -65,10 +66,10 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:block bg-black text-white z-10">
-        <div className="flex justify-between items-center py-3 px-6 md:px-8 2xl:px-48 xl:px-48 lg:px-48">
+      <nav className="hidden 2xl:block xl:hidden lg:hidden bg-black text-white z-10">
+        <div className="flex justify-between items-center py-3 px-8 md:px-8 2xl:px-48 xl:px-48 lg:px-48">
           {/* Left Navigation Links */}
-          <div className="flex space-x-[90px] px-5 text-sm md:text-base">
+          <div className="flex 2xl:space-x-[90px] xl:space-x-[40px] lg:space-x-[40px] 2xl:px-8 xl:px-4 lg:px-4 text-sm md:text-base">
             <div className="relative group">
               <button className="flex items-center space-x-1 focus:outline-none gap-2">
                 <a href="/">
@@ -131,10 +132,10 @@ const Navbar = () => {
           </div>
 
           {/* Right Call-to-Action */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block lg:block md:block">
             <a
               href="#"
-              className="text-sm md:text-base text-white flex items-center space-x-2 hover:text-blue-400"
+              className="text-sm md:text-base text-white flex items-center space-x-2 pr-7 hover:text-blue-400"
             >
               <span>Join With Us</span>
               <FiArrowRight size={16} />

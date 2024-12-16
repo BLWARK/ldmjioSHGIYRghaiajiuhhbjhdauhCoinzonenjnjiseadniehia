@@ -7,6 +7,7 @@ import popularNews from "@/data/popularNews";
 import headlines from "@/data/headline";
 import editorChoice from "@/data/editorChoice";
 import additionalNews from "@/data/additionalNews";
+import academy from "@/data/education";
 
 const share = () => {
 const { slug } = useParams();
@@ -16,6 +17,7 @@ const allArticles = [
     ...headlines,
     ...additionalNews,
     ...editorChoice,
+    ...academy,
   ];
 
   const newsItem = allArticles.find((article) => article.slug === slug);

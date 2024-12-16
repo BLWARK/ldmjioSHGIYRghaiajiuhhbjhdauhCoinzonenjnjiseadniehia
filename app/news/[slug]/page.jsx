@@ -11,6 +11,7 @@ import headlines from "../../../data/headline";
 import editorChoice from "@/data/editorChoice";
 import additionalNews from "@/data/additionalNews";
 import DOMPurify from "dompurify";
+import academy from "@/data/education";
 
 
 const NewsDetail = () => {
@@ -22,6 +23,7 @@ const NewsDetail = () => {
     ...headlines,
     ...additionalNews,
     ...editorChoice,
+    ...academy
   ];
 
   const newsItem = allArticles.find((article) => article.slug === slug);

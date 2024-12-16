@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import Left from "@/components/page-components/headline/left-sec/page";
 import Center from "@/components/page-components/headline/center-sec/page";
 import Right from "@/components/page-components/headline/right-sec/page";
-import PressRelease from "@/components/page-components/pressRelease/page"
+import PressRelease from "@/components/page-components/pressRelease/page";
+import BusinessSect from "@/components/page-components/busines-sect/page"
+import TechnologySect from "@/components/page-components/technology-sect/page"
+import EducationSect from "@/components/page-components/education-sect/page"
 import Image from "next/image";
 
 const HomePage = () => {
@@ -90,23 +93,25 @@ const HomePage = () => {
         )}
       </section>
 
-      <section className="bitcoin-sect container mx-auto ">
-        <h1 className="text-3xl font-bold text-main ">Berita Utama</h1>
-        <div className="w-full h-[1px] my-4 bg-gray-300"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-5">
-          {/* Left Section */}
-          <div className="lg:col-span-3 order-3 lg:order-1"></div>
+      {/* Section Bussines */}
+      <section className="business-sect container mx-auto my-10 ">
+        <h1 className="text-3xl font-bold text-main ">Bussiness</h1>
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+       <BusinessSect/>
+      </section>
 
-          {/* Center Section */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
-            <Center />
-          </div>
+       {/* Section technology */}
+      <section className="technology-sect container mx-auto ">
+        <h1 className="text-3xl font-bold text-main ">Technology</h1>
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+       <TechnologySect/>
+      </section>
 
-          {/* Right Section */}
-          <div className="lg:col-span-3 order-2 lg:order-3">
-            <Right />
-          </div>
-        </div>
+       {/* Section Academy */}
+       <section className="technology-sect container mx-auto mt-10 ">
+        <h1 className="text-3xl font-bold text-main ">Academy</h1>
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+       <EducationSect/>
       </section>
     </div>
   );

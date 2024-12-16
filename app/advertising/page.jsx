@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import adsData from "../../data/adsData"; // Import data iklan
-import pressRelease from "../../data/pressRelease"
+import pressReleaseAds from "../../data/pressReleaseAds"
 
 const Advertising = () => {
   const [showPopup, setShowPopup] = useState(false); // State untuk kontrol popup
@@ -73,7 +73,7 @@ const Advertising = () => {
           <li>Banner Ads can be: Gif Animation, Flash, or Static.</li>
         </ul>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pressRelease.map((pr, index) => (
+          {pressReleaseAds.map((pr, index) => (
             <div
               key={index}
               className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center"
