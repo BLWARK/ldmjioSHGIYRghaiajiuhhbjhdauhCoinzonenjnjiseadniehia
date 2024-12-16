@@ -26,9 +26,10 @@ export default function RootLayout({
       <body className={poppins.className}>
         <div className="flex flex-col justify-center items-center overflow-hidden bg-white w-full  ">
           <TradingViewWidget />
+          
           <Navbar />
           {/* Hero Section */}
-          <div className="  ">{children}</div>
+          <div className="w-[77%]">{children}</div>
           <Footer />
           {/* <ScrollTop/> */}
         </div>

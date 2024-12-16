@@ -18,7 +18,7 @@ const Advertising = () => {
 
   return (
     <div className=" w-full flex justify-start items-start text-black py-8  relative">
-      <div className="w-full container  flex flex-col justify-start items-start">
+      <div className="w-full flex flex-col justify-start items-start">
         <h1 className="text-3xl font-bold mb-4 text-center">All Ads Type</h1>
         <ul className="text-sm mb-6 space-y-2">
           <li>

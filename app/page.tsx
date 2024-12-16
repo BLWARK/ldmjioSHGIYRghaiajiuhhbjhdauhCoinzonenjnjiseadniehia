@@ -9,9 +9,9 @@ const HomePage = () => {
   const [showAd, setShowAd] = useState(true);
 
   return (
-    <div className="w-full h-full bg-white text-black 2xl:px-48 xl:px-48 lg:px-48">
+    <div className="w-full h-full bg-white text-black ">
       {/* Banner Section */}
-      <section className="Banner container mx-auto py-8 px-4">
+      <section className="Banner container mx-auto py-8 ">
         {/* Advertisement Section */}
         {showAd && (
           <div className="relative w-full -z-6">
