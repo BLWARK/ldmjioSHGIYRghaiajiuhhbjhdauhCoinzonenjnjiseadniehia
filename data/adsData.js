@@ -23,18 +23,7 @@ const adsData = [
       price: "$1299",
       details: "View Ads Space",
     },
-    {
-      title: "Screen Sticky Banner + 1PR",
-      size: "Square (360X360) Or Rectangle (360X46)",
-      price: "$4599",
-      details: "View Ads Space",
-    },
-    {
-      title: "Menu button Ad + 1PR",
-      size: "Direct Link",
-      price: "$4099",
-      details: "View Ads Space",
-    },
+   
   ];
   
   export default adsData;

@@ -40,10 +40,10 @@ const NewsDetail = () => {
 
 
   return (
-    <div className="container mx-auto py-8  text-black">
+    <div className="container mx-auto 2xl:py-8 py-2  text-black">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Konten Utama */}
-        <div className="lg:col-span-8 border-r border-gray-300 pr-6">
+        <div className="lg:col-span-8 2xl:border-r border-gray-300 2xl:pr-6 pr-0">
           <div className="flex flex-col">
             <h1 className="2xl:text-[42px] text-[24px] font-bold ">
               {newsItem.title}

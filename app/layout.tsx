@@ -29,7 +29,7 @@ export default function RootLayout({
           
           <Navbar />
           {/* Hero Section */}
-          <div className="w-[77%]">{children}</div>
+          <div className="2xl:w-[77%] w-full 2xl:px-0 px-3 ">{children}</div>
           <Footer />
           {/* <ScrollTop/> */}
         </div>

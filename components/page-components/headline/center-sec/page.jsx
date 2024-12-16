@@ -45,7 +45,7 @@ const Center = () => {
   }, []);
 
   return (
-    <div className="lg:col-span-6 2xl:border-r border-gray-300 pr-4">
+    <div className="lg:col-span-6 2xl:border-r border-gray-300 2xl:pr-4 pr-0">
       {/* Slider Headline */}
       <div className="relative w-full 2xl:h-[400px] h-[250px] overflow-hidden mb-6">
         {sortedHeadlines.map((headline, index) => (

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Left from "@/components/page-components/headline/left-sec/page";
 import Center from "@/components/page-components/headline/center-sec/page";
 import Right from "@/components/page-components/headline/right-sec/page";
+import PressRelease from "@/components/page-components/pressRelease/page"
 import Image from "next/image";
 
 const HomePage = () => {
@@ -10,8 +11,8 @@ const HomePage = () => {
 
   return (
     <div className="w-full h-full bg-white text-black ">
-      {/* Banner Section */}
-      <section className="Banner container mx-auto py-8 ">
+      {/* Section Advertisment */}
+      <section className="Ads container mx-auto py-8 ">
         {/* Advertisement Section */}
         {showAd && (
           <div className="relative w-full -z-6">
@@ -27,7 +28,7 @@ const HomePage = () => {
             </div>
 
             {/* Gambar Advertisement */}
-            <div className="relative w-full 2xl:h-[150px] h-[100px] bg-gray-200">
+            <div className="relative w-full 2xl:h-[150px] h-[100px] bg-gray-200 ">
               <Image
                 src="/P2e Banner.jpg"
                 alt="banner 1"
@@ -40,7 +41,7 @@ const HomePage = () => {
         )}
       </section>
       {/* Section Headlines */}
-      <section className="Headlines container mx-auto  px-4">
+      <section className="Headlines container mx-auto ">
         <h1 className="text-3xl font-bold text-main ">Headliness</h1>
         <div className="w-full h-[1px] my-4 bg-gray-300"></div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-5">
@@ -48,19 +49,19 @@ const HomePage = () => {
           <div className="lg:col-span-3 order-3 lg:order-1">
             <Left />
           </div>
-
           {/* Center Section */}
           <div className="lg:col-span-6 order-1 lg:order-2">
             <Center />
           </div>
-
           {/* Right Section */}
           <div className="lg:col-span-3 order-2 lg:order-3">
             <Right />
           </div>
         </div>
       </section>
-      <section className="Banner container mx-auto py-8 px-4">
+      <PressRelease/>
+      {/* Section advertisment2 */}
+      <section className="Ads2 container mx-auto py-8 ">
         {/* Advertisement Section */}
         {showAd && (
           <div className="relative w-full z-0">
@@ -89,7 +90,7 @@ const HomePage = () => {
         )}
       </section>
 
-      <section className="Headlines container mx-auto  px-4">
+      <section className="bitcoin-sect container mx-auto ">
         <h1 className="text-3xl font-bold text-main ">Berita Utama</h1>
         <div className="w-full h-[1px] my-4 bg-gray-300"></div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-5">

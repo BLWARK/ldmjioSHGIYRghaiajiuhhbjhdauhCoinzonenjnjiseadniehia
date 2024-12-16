@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import adsData from "../../data/adsData"; // Import data iklan
+import pressRelease from "../../data/pressRelease"
 
 const Advertising = () => {
   const [showPopup, setShowPopup] = useState(false); // State untuk kontrol popup
@@ -17,8 +18,8 @@ const Advertising = () => {
   };
 
   return (
-    <div className=" w-full flex justify-start items-start text-black py-8  relative">
-      <div className="w-full flex flex-col justify-start items-start">
+    <div className=" w-full flex flex-col justify-start items-start text-black py-8 mb-20 relative">
+      <div className="w-full flex flex-col justify-center items-start">
         <h1 className="text-3xl font-bold mb-4 text-center">All Ads Type</h1>
         <ul className="text-sm mb-6 space-y-2">
           <li>
@@ -30,7 +31,7 @@ const Advertising = () => {
           </li>
           <li>Banner Ads can be: Gif Animation, Flash, or Static.</li>
         </ul>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {adsData.map((ad, index) => (
             <div
               key={index}
@@ -44,6 +45,47 @@ const Advertising = () => {
                 className="text-blue-500 text-sm hover:underline mb-6"
               >
                 {ad.details}
+              </button>
+              <div className="flex space-x-4 text-sm">
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-full flex items-center space-x-2">
+                  <span>Pay with IDR</span>
+                </button>
+                <button className="bg-gray-800 text-white px-6 py-3 rounded-full flex items-center space-x-2">
+                  <span>Pay by Crypto</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+       {/* press Release */}
+      <div className="w-full flex flex-col justify-center items-start mt-20">
+        <h1 className="text-3xl font-bold mb-4 text-center">Press Release</h1>
+        <p></p>
+        <ul className="text-sm  mb-6 space-y-2">
+          <li>
+            All the Banner ads are valid till 1 month from the date of display.
+            However, the term can be extended by quick renewal.
+          </li>
+          <li>
+            All Ads also published on social media, aggregator, and newsletter.
+          </li>
+          <li>Banner Ads can be: Gif Animation, Flash, or Static.</li>
+        </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pressRelease.map((pr, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center"
+            >
+              <h2 className="text-xl font-bold mb-2">{pr.title}</h2>
+              <p className="text-gray-600 mb-4">Size - {pr.size}</p>
+              <p className="text-2xl font-bold mb-4">{pr.price}</p>
+              <button
+                onClick={() => handleViewDetails(pr)}
+                className="text-blue-500 text-sm hover:underline mb-6"
+              >
+                {pr.details}
               </button>
               <div className="flex space-x-4 text-sm">
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-full flex items-center space-x-2">
