@@ -40,7 +40,7 @@ const NewsDetail = () => {
 
 
   return (
-    <div className="container mx-auto py-8 px-4 text-black">
+    <div className="container mx-auto py-8  text-black">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Konten Utama */}
         <div className="lg:col-span-8 border-r border-gray-300 pr-6">

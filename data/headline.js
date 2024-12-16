@@ -110,7 +110,7 @@ const headline = [
       <br>
       <p>Menurut pemerintah Ukraina, penggunaan kripto memungkinkan mereka untuk melakukan transaksi dengan negara-negara sahabat tanpa terhalang oleh sanksi ekonomi yang diberlakukan terhadap mereka. "Blockchain dan kripto memberikan Ukraina kesempatan untuk menjaga arus keuangan tetap lancar meskipun di tengah krisis," ujar pejabat keuangan Ukraina.</p>
       <br>
-      <strong style="font-size: 24px;"Kripto: Solusi Fleksibel di Tengah Krisis Keuangan</strong><br><br>
+      <strong style="font-size: 24px;">Kripto: Solusi Fleksibel di Tengah Krisis Keuangan</strong><br><br>
       <p>Dengan infrastruktur yang semakin berkembang, kripto menawarkan kemudahan dalam transaksi cepat dan murah, baik untuk individu maupun bisnis. Terutama, transaksi lintas batas yang sering kali terhambat oleh peraturan ketat atau biaya tinggi kini dapat dilakukan lebih efisien melalui mata uang digital. Penerimaan global terhadap Bitcoin, Ethereum, dan stablecoin semakin meningkat, menjadikannya alat yang sangat relevan bagi Ukraina yang membutuhkan akses cepat ke pasar internasional.</p>
       <br>
       <strong style="font-size: 24px;">Mengatasi Ketidakpastian Ekonomi dengan Teknologi Kripto</strong><br><br>

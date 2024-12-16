@@ -32,12 +32,12 @@ const CategoryPage = () => {
   }
 
   return (
-    <div className="container 2xl:flex flex-row w-full mx-auto py-8 px-8 text-black">
+    <div className="container 2xl:flex flex-row w-full mx-auto py-8  text-black">
         <div className="flex flex-col 2xl:w-[90%] w-full  2xl:border-r  divide-gray-300">
       <h1 className="2xl:text-3xl text-xl font-bold mb-6 capitalize">
         Articles in {category}
       </h1>
-      <div className="flex flex-col 2xl:w-[90%] w-full   gap-6">
+      <div className="flex flex-col 2xl:w-[95%] w-full   gap-6">
         {filteredArticles.map((article) => (
           <div key={`${article.type}-${article.id}`} className="p-4 border w-full rounded-lg flex items-start gap-4">
             <div className="relative 2xl:w-[300px] 2xl:h-[200px] w-[150px] h-[100px] flex-shrink-0">
