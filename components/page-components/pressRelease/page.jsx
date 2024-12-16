@@ -5,7 +5,7 @@ import pressReleaseData from "@/data/pressRelease";
 
 const PressReleaseSect = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Index untuk slider desktop
-  const [visibleItems, setVisibleItems] = useState(4); // Jumlah item untuk mobile
+  const [visibleItems, setVisibleItems] = useState(2); // Jumlah item untuk mobile
 
   // Slider otomatis untuk desktop setiap 5 detik
   useEffect(() => {
@@ -21,7 +21,7 @@ const PressReleaseSect = () => {
 
   // Fungsi untuk menampilkan lebih banyak item pada mobile
   const loadMoreItems = () => {
-    setVisibleItems((prev) => prev + 4);
+    setVisibleItems((prev) => prev + 2);
   };
 
   return (

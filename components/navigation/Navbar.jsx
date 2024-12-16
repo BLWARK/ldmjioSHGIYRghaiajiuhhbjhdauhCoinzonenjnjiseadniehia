@@ -17,36 +17,7 @@ const Navbar = () => {
       {/* Top Bar */}
       <div className="bg-main flex justify-center items-center text-white 2xl:h-[150px] h-[80px]">
         <div className="w-full flex justify-between items-center py-4 px-6 md:px-8 2xl:px-50 xl:px-48 lg:px-48">
-          <a href="/">
-            <div className="2xl:block hidden text-2xl font-bold">
-              <Image
-                src="/Logo.png"
-                alt="Logo"
-                width={300}
-                height={300}
-                priority={true}
-                className="object-contain 2xl:object-cover"
-              />
-            </div>
-            <div className="2xl:hidden block text-2xl font-bold">
-              <Image
-                src="/Logo.png"
-                alt="Logo"
-                width={150}
-                height={150}
-                priority={true}
-                className="object-contain 2xl:object-cover"
-              />
-            </div>
-          </a>
-          {/* Desktop Subscribe Section */}
-          <div className="hidden lg:flex flex-col items-start gap-2">
-            <span className="font-semibold text-[32px]">Subscribe CoinZone</span>
-            <span className="text-sm">Get exclusive content just $200/month</span>
-            <FiArrowRight size={24} className="mt-4" />
-          </div>
-          {/* Mobile Hamburger */}
-          <div className="lg:hidden">
+        <div className="lg:hidden flex items-center">
             <HamburgerMenu
               isOpen={isOpen}
               menuClicked={() => setIsOpen(!isOpen)} // Toggle menu
@@ -59,6 +30,37 @@ const Navbar = () => {
               animationDuration={0.5}
             />
           </div>
+          <a href="/">
+            <div className="2xl:block hidden text-2xl font-bold">
+              <Image
+                src="/Logo.png"
+                alt="Logo"
+                width={300}
+                height={300}
+                priority={true}
+                className="object-contain 2xl:object-cover"
+              />
+            </div>
+             {/* Mobile Hamburger */}
+          </a>
+             {/* Logo */}
+             <div className="flex-1 flex justify-center lg:justify-start">
+            <Image
+              src="/Logo.png"
+              alt="Logo"
+              width={150}
+              height={150}
+              priority={true}
+              className="object-contain"
+            />
+          </div>
+          {/* Desktop Subscribe Section */}
+          <div className="hidden lg:flex flex-col items-start gap-2">
+            <span className="font-semibold text-[32px]">Subscribe CoinZone</span>
+            <span className="text-sm">Get exclusive content just $200/month</span>
+            <FiArrowRight size={24} className="mt-4" />
+          </div>
+         
         </div>
       </div>
 
@@ -143,8 +145,8 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[300px] bg-main text-white z-50 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+         className={`fixed top-0 left-0 h-screen w-[300px] bg-main text-white z-50 transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-400">
