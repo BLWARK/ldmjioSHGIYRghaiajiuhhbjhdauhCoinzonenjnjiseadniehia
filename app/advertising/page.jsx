@@ -76,9 +76,9 @@ const Advertising = () => {
               key={index}
               className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center"
             >
-              <h2 className="text-[24px] font-medium mb-2 text-main">{pr.title}</h2>
+              <h2 className="text-[22px] font-medium mb-2 text-main">{pr.title}</h2>
               
-              <p className="text-3xl font-bold mb-4">{pr.price}</p>
+              <p className="text-xl font-bold mb-4">{pr.price}</p>
             
               <PaymentButton/>
             </div>

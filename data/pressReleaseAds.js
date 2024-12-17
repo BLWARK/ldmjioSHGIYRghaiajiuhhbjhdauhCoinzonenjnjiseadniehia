@@ -2,19 +2,19 @@ const pressReleaseAds = [
     {
       title: "Press Release",
       
-      price: "$2599",
+      price: "IDR 15.000.000",
       
     },
     {
       title: "Guess Post",
       
-      price: "$2099",
+      price: "IDR 15.000.000",
       
     },
     {
       title: "Sponsored Article",
       
-      price: "$1499",
+      price: "IDR 30.000.000",
       
     },
 
