@@ -46,7 +46,7 @@ const headline = [
       
       `,
     tags: ["google", "crypto", "komputer", "technology", "bitcoin"],
-    category: ["crypto"],
+    category: ["crypto", "technology"],
     authorIds: [3],
   },
   {

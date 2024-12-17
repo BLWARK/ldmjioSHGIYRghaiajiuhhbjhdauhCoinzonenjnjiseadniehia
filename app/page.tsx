@@ -5,7 +5,7 @@ import Center from "@/components/page-components/headline/center-sec/page";
 import Right from "@/components/page-components/headline/right-sec/page";
 import PressRelease from "@/components/page-components/pressRelease/page";
 import BusinessSect from "@/components/page-components/busines-sect/page";
-
+import Story from "@/components/page-components/story-sect/page";
 import TechnologySect from "@/components/page-components/technology-sect/page"
 import EducationSect from "@/components/page-components/education-sect/page"
 import Image from "next/image";
@@ -92,6 +92,13 @@ const HomePage = () => {
             </div>
           </div>
         )}
+      </section>
+
+      {/* Section Bussines */}
+      <section className="business-sect container mx-auto my-10 ">
+        <h1 className="text-3xl font-bold text-main ">Story</h1>
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+       <Story/>
       </section>
 
       {/* Section Bussines */}
