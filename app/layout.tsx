@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="flex flex-col justify-center items-center overflow-hidden bg-white w-full  ">
+        <div className="flex flex-col justify-center items-center overflow-hidden bg-gray-100 w-full  ">
           <TradingViewWidget />
           
           <Navbar />

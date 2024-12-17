@@ -27,13 +27,15 @@ const Left = () => {
             </div>
 
             {/* Gambar Advertisement */}
+            <div className="relative w-[340px] h-[400px] bg-black flex justify-center items-center">
             <Image
               src="/Kinara1.webp"
               alt="Kinara Advertisement"
               className="rounded-lg"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
             />
+            </div>
           </div>
         )}
       </div>

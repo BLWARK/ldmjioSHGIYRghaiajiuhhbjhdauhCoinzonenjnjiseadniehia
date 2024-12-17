@@ -4,7 +4,8 @@ import Left from "@/components/page-components/headline/left-sec/page";
 import Center from "@/components/page-components/headline/center-sec/page";
 import Right from "@/components/page-components/headline/right-sec/page";
 import PressRelease from "@/components/page-components/pressRelease/page";
-import BusinessSect from "@/components/page-components/busines-sect/page"
+import BusinessSect from "@/components/page-components/busines-sect/page";
+
 import TechnologySect from "@/components/page-components/technology-sect/page"
 import EducationSect from "@/components/page-components/education-sect/page"
 import Image from "next/image";
@@ -13,7 +14,7 @@ const HomePage = () => {
   const [showAd, setShowAd] = useState(true);
 
   return (
-    <div className="w-full h-full bg-white text-black ">
+    <div className="w-full h-full  text-black ">
       {/* Section Advertisment */}
       <section className="Ads container mx-auto py-8 ">
         {/* Advertisement Section */}
@@ -99,6 +100,8 @@ const HomePage = () => {
         <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
        <BusinessSect/>
       </section>
+
+       
 
        {/* Section technology */}
       <section className="technology-sect container mx-auto ">
