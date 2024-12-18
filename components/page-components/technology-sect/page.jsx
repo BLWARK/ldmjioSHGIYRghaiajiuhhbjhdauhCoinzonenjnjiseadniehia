@@ -47,7 +47,7 @@ const TechnologySect = () => {
           <Link
             key={article.id}
             href={`/news/${article.slug}`}
-            className="block overflow-hidden bg-white border border-gray-300 rounded-lg shadow hover:shadow-lg transition-transform transform hover:scale-105"
+            className="block overflow-hidden bg-white border border-gray-300 rounded-lg"
           >
             {/* Gambar */}
             <div className="relative w-full h-40">
@@ -69,14 +69,14 @@ const TechnologySect = () => {
                 {truncateWords(article.title, 15)} {/* Maksimal 10 kata */}
                 {/* {truncateText(article.title, 50)}  // Maksimal 50 karakter */}
               </h3>
-              <p className="text-sm text-gray-600">{article.date}</p>
+              <p className="2xl:text-sm text-xs text-gray-600">{article.date}</p>
             </div>
           </Link>
         ))}
       </div>
 
       {/* Tombol "See More" */}
-      {visibleItems < technologyArticles.length && (
+      {/* {visibleItems < technologyArticles.length && (
         <div className="mt-6 flex justify-center">
           <button
             onClick={loadMoreItems}
@@ -85,7 +85,7 @@ const TechnologySect = () => {
             See More
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -1,13 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import Left from "@/components/page-components/headline/left-sec/page";
 import Center from "@/components/page-components/headline/center-sec/page";
 import Right from "@/components/page-components/headline/right-sec/page";
 import PressRelease from "@/components/page-components/pressRelease/page";
 import BusinessSect from "@/components/page-components/busines-sect/page";
 import Story from "@/components/page-components/story-sect/page";
-import TechnologySect from "@/components/page-components/technology-sect/page"
-import EducationSect from "@/components/page-components/education-sect/page"
+import TechnologySect from "@/components/page-components/technology-sect/page";
+import EducationSect from "@/components/page-components/education-sect/page";
+import Event from "@/components/page-components/event-sect/page";
 import Image from "next/image";
 
 const HomePage = () => {
@@ -63,7 +65,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <PressRelease/>
+      <PressRelease />
       {/* Section advertisment2 */}
       <section className="Ads2 container mx-auto py-8 ">
         {/* Advertisement Section */}
@@ -94,34 +96,75 @@ const HomePage = () => {
         )}
       </section>
 
-      {/* Section Bussines */}
-      <section className="business-sect container mx-auto my-10 ">
-        <h1 className="text-3xl font-bold text-main ">Story</h1>
+      {/* Section Story */}
+      <section className="Story-sect container mx-auto my-10 ">
+        <h1 className="2xl:text-3xl text-2xl font-bold text-main ">Story</h1>
         <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
-       <Story/>
+        <Story />
+      </section>
+
+      {/* Section Event */}
+      <section className="technology-sect container mx-auto mt-10 ">
+        <h1 className="2xl:text-3xl text-2xl  font-bold text-main ">Upcoming Events</h1>
+        {/* View All Button */}
+
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+        <Event />
+      </section>
+
+      {/* Section Academy */}
+      <section className="technology-sect container mx-auto mt-10 ">
+        <div className="flex justify-between items-center">
+          <h1 className="2xl:text-3xl text-2xl font-bold text-main ">
+            Academy
+          </h1>
+          {/* View All Button */}
+          <div className=" text-center flex justify-start items-start">
+            <Link href="/category/academy">
+              <button className="px-6 py-2 text-sm border-main border text-main hover:text-white rounded hover:bg-main transition">
+                View All
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+        <EducationSect />
       </section>
 
       {/* Section Bussines */}
       <section className="business-sect container mx-auto my-10 ">
-        <h1 className="text-3xl font-bold text-main ">Bussiness</h1>
+        <div className="flex justify-between items-center">
+          <h1 className="2xl:text-3xl text-2xl font-bold text-main ">
+            Business
+          </h1>
+          <div className="text-center flex justify-start items-start">
+            <Link href="/category/business">
+              <button className="px-6 py-2 text-sm border-main border text-main hover:text-white rounded hover:bg-main transition">
+                View All
+              </button>
+            </Link>
+          </div>
+        </div>
         <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
-       <BusinessSect/>
+        <BusinessSect />
       </section>
 
-       
-
-       {/* Section technology */}
+      {/* Section technology */}
       <section className="technology-sect container mx-auto ">
-        <h1 className="text-3xl font-bold text-main ">Technology</h1>
+        <div className="flex justify-between items-center">
+          <h1 className="2xl:text-3xl text-2xl font-bold text-main ">
+            Technology
+          </h1>
+          <div className=" text-center flex justify-start items-start">
+            <Link href="/category/technology">
+              <button className="px-6 py-2 text-sm border-main border text-main hover:text-white rounded hover:bg-main transition">
+                View All
+              </button>
+            </Link>
+          </div>
+        </div>
         <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
-       <TechnologySect/>
-      </section>
-
-       {/* Section Academy */}
-       <section className="technology-sect container mx-auto mt-10 ">
-        <h1 className="text-3xl font-bold text-main ">Academy</h1>
-        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
-       <EducationSect/>
+        <TechnologySect />
       </section>
     </div>
   );

@@ -21,6 +21,11 @@ const Center = () => {
   // Sort headlines by id in descending order
   const sortedHeadlines = [...headlines].sort((a, b) => b.id - a.id);
 
+  // Sort additional news by date in descending order
+  const sortedAdditionalNews = [...additionalNews].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+
   // Durasi jeda otomatis dalam milidetik
   const autoScrollInterval = 5000;
 
@@ -90,27 +95,36 @@ const Center = () => {
 
       {/* Additional News */}
       <div className="space-y-4 divide-y divide-gray-300">
-        {additionalNews.map((news) => (
+        {sortedAdditionalNews.map((news) => (
           <div key={news.id} className="py-4 flex gap-4">
             <div className="relative 2xl:w-[250px] 2xl:h-[150px] w-[200px] h-[100px]">
               <Image
                 src={news.image}
                 alt={news.title}
                 fill
-                style={{ objectFit: "cover" }} // Gambar mengisi wrapper
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
               />
             </div>
             <div className="flex flex-col justify-between w-[70%]">
               <Link href={`/news/${news.slug}`}>
                 <h3 className="2xl:text-lg text-sm font-bold hover:underline cursor-pointer">
-                  {truncateText(news.title, 9)} {/* Batasi hingga 10 kata */}
+                  {truncateText(news.title, 9)}
                 </h3>
               </Link>
               <p className="text-sm text-gray-600">{news.date}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* View All Button */}
+      <div className="mt-6 text-center flex justify-start items-start">
+        <Link href="/all-news">
+          <button className="px-6 py-2 border-main border text-main hover:text-white rounded hover:bg-main transition">
+            View All
+          </button>
+        </Link>
       </div>
     </div>
   );

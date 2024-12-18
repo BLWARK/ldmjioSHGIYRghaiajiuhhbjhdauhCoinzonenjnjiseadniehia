@@ -74,14 +74,14 @@ const BusinessSect = () => {
                 {truncateWords(article.title, 15)} {/* Maksimal 10 kata */}
                 {/* {truncateText(article.title, 50)}  // Maksimal 50 karakter */}
               </h3>
-              <p className="text-sm text-gray-600">{article.date}</p>
+              <p className="2xl:text-sm text-xs text-gray-600">{article.date}</p>
             </div>
           </Link>
         ))}
       </div>
 
       {/* Tombol "See More" */}
-      {visibleItems < businessArticles.length && (
+      {/* {visibleItems < businessArticles.length && (
         <div className="mt-6 flex justify-center">
           <button
             onClick={loadMoreItems}
@@ -90,7 +90,7 @@ const BusinessSect = () => {
             See More
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

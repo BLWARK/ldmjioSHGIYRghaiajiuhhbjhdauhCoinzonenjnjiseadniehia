@@ -13,7 +13,7 @@ const EducationSect = () => {
   };
 
   return (
-    <div className="container mx-auto py-6  text-black">
+    <div className="container mx-auto py-6   text-black">
      
       {/* Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -21,7 +21,7 @@ const EducationSect = () => {
           <Link
             key={item.id}
             href={`/news/${item.slug}`}
-            className="block overflow-hidden bg-white border border-gray-300 rounded-lg shadow hover:shadow-lg transition-transform transform hover:scale-105"
+            className="block overflow-hidden bg-white border border-gray-300 rounded-lg shadow "
           >
             {/* Gambar */}
             <div className="relative w-full h-40">
@@ -36,10 +36,10 @@ const EducationSect = () => {
 
             {/* Konten */}
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2 truncate">
+              <h3 className="text-lg font-semibold mb-2 truncate hover:underline">
                 {item.title}
               </h3>
-              <p className="text-sm text-gray-600">{item.date}</p>
+              <p className="2xl:text-sm text-xs text-gray-600">{item.date}</p>
             </div>
           </Link>
         ))}
