@@ -8,7 +8,7 @@ const Left = () => {
   const [showAd, setShowAd] = useState(true);
 
   return (
-    <div className="lg:col-span-3 2xl:border-r 2xl:block hidden border-gray-300 pr-4">
+    <div className="h-full lg:col-span-3 2xl:border-r 2xl:block hidden border-gray-300 pr-4">
       <div>
         <TradingViewWidgetSh />
 

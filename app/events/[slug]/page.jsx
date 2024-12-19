@@ -44,25 +44,25 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="flex py-8 px-2 text-black">
+    <div className="2xl:flex-row flex-col flex py-8 px-2 text-black">
       
 
       {/* Event Info */}
-      <div className="w- flex flex-col  gap-6 mt-5">
+      <div className=" flex flex-col  gap-6 2xl:mt-5 mt-0">
         {/* Header */}
-      <div className="flex justify-start items-center mb-4">
+      <div className="flex justify-start items-start ">
         <h1 className="text-3xl font-bold">{event.title}</h1>
       </div>
         {/* Left Content */}
         <div className="lg:w-[90%]">
-          <div className="mb-6 space-y-2 text-gray-600">
+          <div className="mb-4 space-y-2 text-gray-600">
             <p className="flex items-center gap-2">
               <IoLocationOutline className="text-blue-600" />
               {event.location}
             </p>
             <p className="flex items-center gap-2">
               <IoCalendarOutline className="text-blue-600" />
-              <strong>Date:</strong> {event.date} | {event.time} ({event.timezone})
+               {event.date} | {event.time} 
             </p>
             <p className="flex items-center gap-2">
               <IoPricetagOutline className="text-blue-600" />
@@ -75,24 +75,24 @@ const EventDetails = () => {
           </div>
 
           {/* Event Image */}
-          <div className="w-full h-[450px] relative mb-6">
+          <div className="w-full 2xl:h-[450px] h-[250px] relative mb-6 ">
             <Image
               src={event.image}
               alt={event.title}
               fill
-              style={{ objectFit: "contain" }}
-              className="rounded-lg"
+              style={{ objectFit: "cover" }}
+              className="rounded-lg flex items-start justify-start"
             />
           </div>
 
           {/* Event Content */}
-          <div className="prose mb-6">
+          <div className="prose 2xl:mb-6 ">
             <h2 className="font-bold text-xl mb-2">Event Summary</h2>
             <p>{event.content}</p>
           </div>
         </div>
          {/* Ticket and Register */}
-         <div className="bg-blue-50 p-6 py-10 rounded-lg flex justify-between items-center mb-6">
+         <div className="2xl:flex-row flex-col bg-blue-50 p-6 py-10 rounded-lg flex justify-between items-center mb-6 gap-8">
             <div>
               <h3 className="font-semibold text-main">Welcome! To join the event, please register</h3>
               <p className="text-gray-600 text-sm">
@@ -135,7 +135,7 @@ const EventDetails = () => {
             </div>
           </div>
         
-        <div className="w-full space-y-6 border p-6 shadow-lg mt-5">
+        <div className="w-full space-y-6 border p-6 shadow-md mt-5">
           
           
 

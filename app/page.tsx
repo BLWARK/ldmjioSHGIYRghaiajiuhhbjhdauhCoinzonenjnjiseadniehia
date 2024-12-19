@@ -10,6 +10,7 @@ import Story from "@/components/page-components/story-sect/page";
 import TechnologySect from "@/components/page-components/technology-sect/page";
 import EducationSect from "@/components/page-components/education-sect/page";
 import Event from "@/components/page-components/event-sect/page";
+import SubscriptionSect from "@/components/page-components/subscribe-sect/page"
 import Image from "next/image";
 
 const HomePage = () => {
@@ -165,6 +166,13 @@ const HomePage = () => {
         </div>
         <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
         <TechnologySect />
+      </section>
+
+      {/* Section Subs */}
+      <section className="technology-sect container mx-auto py-10 mb-10 ">
+       
+        <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
+        <SubscriptionSect />
       </section>
     </div>
   );
