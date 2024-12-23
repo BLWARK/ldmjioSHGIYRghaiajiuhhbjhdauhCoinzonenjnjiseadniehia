@@ -144,7 +144,7 @@ const StorySect = () => {
 
           <div className="w-[600px] h-[900px] flex justify-center items-center rounded relative overflow-hidden">
             {/* Progress Bars */}
-            <div className="absolute -top-[1px] left-0 w-full flex space-x-1 z-10">
+            <div className="absolute 2xl:-top-[1px] top-[100px] left-0 w-full flex space-x-1 z-10">
               {currentStory.content.map((_, idx) => (
                 <div
                   key={idx}
