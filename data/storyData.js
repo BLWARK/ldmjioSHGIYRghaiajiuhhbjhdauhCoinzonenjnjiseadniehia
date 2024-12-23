@@ -1,7 +1,19 @@
 const storyData = [
-    [
+  [
       {
         id: 1,
+        thumbnail: "/Story2-tumb.jpg",
+        content: [
+          
+          { type: "video", src: "/Story2.mp4", duration: 5000 },
+          { type: "video", src: "/Story2a.mp4", duration: 5000 },
+          
+        ],
+      },
+    ],
+    [
+      {
+        id: 3,
         thumbnail: "/Story1 tumb.jpg",
         content: [
           { type: "image", src: "/Story1 tumb.jpg", duration: 5000 },
@@ -26,7 +38,7 @@ const storyData = [
 
     [
       {
-        id: 3,
+        id: 4,
         thumbnail: "/Story3 tumb.jpg",
         content: [
           { type: "image", src: "/Story3 tumb.jpg", duration: 5000 },
@@ -38,7 +50,7 @@ const storyData = [
 
     [
       {
-        id: 4,
+        id: 5,
         thumbnail: "/Story4 tumb.jpg",
         content: [
           { type: "image", src: "/Story4 tumb.jpg", duration: 5000 },
@@ -50,7 +62,7 @@ const storyData = [
 
     [
       {
-        id: 5,
+        id: 6,
         thumbnail: "/Story5 tumb.jpg",
         content: [
           { type: "image", src: "/Story5 tumb.jpg", duration: 5000 },
