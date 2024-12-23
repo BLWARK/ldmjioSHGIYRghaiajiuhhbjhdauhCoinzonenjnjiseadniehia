@@ -54,7 +54,7 @@ const storyData = [
         content: [
           { type: "image", src: "/Story5 tumb.jpg", duration: 5000 },
           { type: "image", src: "/Story5 cont.jpg", duration: 5000 },
-  
+          
         ],
       },
     ],
