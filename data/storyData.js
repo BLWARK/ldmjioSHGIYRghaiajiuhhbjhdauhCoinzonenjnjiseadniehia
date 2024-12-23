@@ -17,8 +17,8 @@ const storyData = [
         thumbnail: "/Story2-tumb.jpg",
         content: [
           
-          { type: "image", src: "/Story2.mp4", duration: 5000 },
-          { type: "image", src: "/Story2a.mp4", duration: 5000 },
+          { type: "video", src: "/Story2.mp4", duration: 5000 },
+          { type: "video", src: "/Story2a.mp4", duration: 5000 },
           
         ],
       },
