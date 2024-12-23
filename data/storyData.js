@@ -14,11 +14,11 @@ const storyData = [
     [
       {
         id: 2,
-        thumbnail: "/Story1 tumb.jpg",
+        thumbnail: "/Story2 tumb.jpg",
         content: [
-          { type: "image", src: "/Story1 tumb.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont2.jpg", duration: 5000 },
+          { type: "video", src: "/Story2.mp4", duration: 5000 },
+          { type: "video", src: "/Story2a.mp4", duration: 5000 },
+          
         ],
       },
     ],
@@ -26,11 +26,11 @@ const storyData = [
     [
       {
         id: 3,
-        thumbnail: "/Story1 tumb.jpg",
+        thumbnail: "/Story3 tumb.jpg",
         content: [
-          { type: "image", src: "/Story1 tumb.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont2.jpg", duration: 5000 },
+          { type: "image", src: "/Story3 tumb.jpg", duration: 5000 },
+          { type: "image", src: "/Story3 cont.jpg", duration: 5000 },
+          { type: "image", src: "/Story3 cont2.jpg", duration: 5000 },
         ],
       },
     ],
@@ -38,11 +38,11 @@ const storyData = [
     [
       {
         id: 4,
-        thumbnail: "/Story1 tumb.jpg",
+        thumbnail: "/Story4 tumb.jpg",
         content: [
-          { type: "image", src: "/Story1 tumb.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont2.jpg", duration: 5000 },
+          { type: "image", src: "/Story4 tumb.jpg", duration: 5000 },
+          { type: "image", src: "/Story4 cont.jpg", duration: 5000 },
+          
         ],
       },
     ],
@@ -50,11 +50,11 @@ const storyData = [
     [
       {
         id: 5,
-        thumbnail: "/Story1 tumb.jpg",
+        thumbnail: "/Story5 tumb.jpg",
         content: [
-          { type: "image", src: "/Story1 tumb.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont.jpg", duration: 5000 },
-          { type: "image", src: "/Story1 cont2.jpg", duration: 5000 },
+          { type: "image", src: "/Story5 tumb.jpg", duration: 5000 },
+          { type: "image", src: "/Story5 cont.jpg", duration: 5000 },
+  
         ],
       },
     ],

@@ -21,7 +21,7 @@ const Advertising = () => {
   };
 
   return (
-    <div className=" w-full flex flex-col justify-start items-start text-black py-8 mb-20 relative">
+    <div className=" w-full flex flex-col justify-start items-start text-black py-8 mb-20 relative px-4">
       <div className="w-full flex flex-col justify-center items-start">
         <h1 className="text-3xl font-bold mb-4 text-center text-main">All Ads Type</h1>
         <ul className="text-md mb-6 space-y-2">
@@ -70,7 +70,7 @@ const Advertising = () => {
           <li>Spammy or irrelevant links will not be accepted. Links must be directly relevant to the content and target audience.</li>
           <li>Articles will be published within 24 hours of payment confirmation. Articles may go live at any time during this window.</li>
         </ul>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {pressReleaseAds.map((pr, index) => (
             <div
               key={index}

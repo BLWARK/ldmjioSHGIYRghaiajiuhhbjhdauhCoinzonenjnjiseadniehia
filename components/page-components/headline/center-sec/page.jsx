@@ -18,8 +18,10 @@ const truncateText = (text, wordLimit) => {
 const Center = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Sort headlines by id in descending order
-  const sortedHeadlines = [...headlines].sort((a, b) => b.id - a.id);
+  // Sort headlines by date in descending order
+  const sortedHeadlines = [...headlines].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
 
   // Sort additional news by date in descending order
   const sortedAdditionalNews = [...additionalNews].sort(
@@ -55,7 +57,7 @@ const Center = () => {
       <div className="relative w-full 2xl:h-[400px] h-[250px] overflow-hidden mb-6">
         {sortedHeadlines.map((headline, index) => (
           <div
-            key={headline.id}
+            key={`${headline.id}-${headline.type}`}
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
@@ -96,7 +98,7 @@ const Center = () => {
       {/* Additional News */}
       <div className="space-y-4 divide-y divide-gray-300">
         {sortedAdditionalNews.map((news) => (
-          <div key={news.id} className="py-4 flex gap-4">
+          <div key={`${news.id}-${news.type}`} className="py-4 flex gap-4">
             <div className="relative 2xl:w-[250px] 2xl:h-[150px] w-[200px] h-[100px]">
               <Image
                 src={news.image}

@@ -45,7 +45,7 @@ const TechnologySect = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {technologyArticles.slice(0, visibleItems).map((article) => (
           <Link
-            key={article.id}
+            key={`${article.id}-${article.type}`}
             href={`/news/${article.slug}`}
             className="block overflow-hidden bg-white border border-gray-300 rounded-lg"
           >

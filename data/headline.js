@@ -4,7 +4,7 @@ const headline = [
     title: "Pemegang Saham Microsoft Tolak Bitcoin: Stabilitas Tetap Prioritas",
     type: "headline",
     image: "/Head3.jpg",
-    date: "Thu 25 Aug 2024",
+    date: "Dec 25 2024",
     description:
       "Pemegang Saham Microsoft Tolak Bitcoin: Stabilitas Tetap Prioritas",
     slug: "Pemegang-Saham-Microsoft-Tolak-Bitcoin-Stabilitas-Tetap-Prioritas",
@@ -30,7 +30,7 @@ const headline = [
       "Google Luncurkan Chip Komputasi Kuantum Willow: Ancaman bagi Enkripsi Kripto?",
     type: "headline",
     image: "/Head2.jpg",
-    date: "Thu 25 Aug 2024",
+    date: "Dec 25 2024",
     description:
       "Google Luncurkan Chip Komputasi Kuantum Willow: Ancaman bagi Enkripsi Kripto?",
     slug: "Google-Luncurkan-Chip-Komputasi-Kuantum-Willow-Ancaman-bagi-Enkripsi-Kripto",
@@ -55,7 +55,7 @@ const headline = [
       "Anggota Parlemen Texas Usulkan Cadangan Bitcoin Dikelola Negara untuk Stabilitas Keuangan",
     type: "headline",
     image: "/Head1.jpg",
-    date: "Fr 13 Dec 2024",
+    date: "Dec 27 2024",
     description: "cucu presiden",
     slug: "Anggota-Parlemen-Texas-Usulkan-Cadangan-Bitcoin-Dikelola-Negara-untuk-Stabilitas-Keuangan",
     content: `
@@ -79,7 +79,7 @@ const headline = [
       "Step Finance Bawa Saham Terkenal Seperti Nvidia (NVDA) dan Tesla (TSLA) ke Blockchain Solana",
     type: "headline",
     image: "/Head4.jpg",
-    date: "Fr 13 Dec 2024",
+    date: "Dec 28 2024",
     description:
       "Step Finance Bawa Saham Terkenal Seperti Nvidia (NVDA) dan Tesla (TSLA) ke Blockchain Solana",
     slug: "Step-Finance-Bawa-Saham-Terkenal-Seperti-Nvidia-(NVDA)-dan-Tesla-(TSLA)-ke-Blockchain-Solana",
@@ -101,7 +101,7 @@ const headline = [
     title:"Ukraina Gunakan Kripto untuk Transaksi Lintas Batas dan Menjaga Stabilitas Keuangan di Tengah Konflik",
     type: "headline",
     image: "/Head5.jpg",
-    date: "Fr 13 Dec 2024",
+    date: "Dec 26 2024",
     description:
       "Ukraina Gunakan Kripto untuk Transaksi Lintas Batas dan Menjaga Stabilitas Keuangan di Tengah Konflik",
     slug: "Ukraina-Gunakan-Kripto-untuk-Transaksi-Lintas-Batas-dan-Menjaga-Stabilitas-Keuangan-di-Tengah-Konflik",

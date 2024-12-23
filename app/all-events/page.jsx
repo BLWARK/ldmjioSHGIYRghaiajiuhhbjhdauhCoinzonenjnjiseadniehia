@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import events from "@/data/events";
 import Image from "next/image";
@@ -18,49 +17,21 @@ const EventPage = () => {
         );
 
   return (
-    <div className="container flex flex-col w-full mx-auto py-20 text-black">
+    <div className="container flex flex-col w-full mx-auto 2xl:py-20 py-5 px-2 text-black">
       <h1 className="2xl:text-3xl text-xl font-bold mb-6">All Events</h1>
 
-      {/* Filter Buttons */}
-      <div className="flex gap-4 mb-6">
-        <button
-          className={`px-4 py-2 rounded ${
-            filter === "all" ? "bg-blue-600 text-white" : "bg-gray-200 text-black"
-          }`}
-          onClick={() => setFilter("all")}
+      {/* Filter Dropdown */}
+      <div className="relative mb-6 w-full max-w-xs">
+        <select
+          className="w-full px-4 py-2 border rounded bg-white text-black"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
         >
-          All
-        </button>
-        <button
-          className={`px-4 py-2 rounded ${
-            filter === "upcoming"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-black"
-          }`}
-          onClick={() => setFilter("upcoming")}
-        >
-          Upcoming
-        </button>
-        <button
-          className={`px-4 py-2 rounded ${
-            filter === "ongoing"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-black"
-          }`}
-          onClick={() => setFilter("ongoing")}
-        >
-          Ongoing
-        </button>
-        <button
-          className={`px-4 py-2 rounded ${
-            filter === "complete"
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-black"
-          }`}
-          onClick={() => setFilter("complete")}
-        >
-          Complete
-        </button>
+          <option value="all">All</option>
+          <option value="upcoming">Upcoming</option>
+          <option value="ongoing">Ongoing</option>
+          <option value="complete">Complete</option>
+        </select>
       </div>
 
       {/* Event List */}
@@ -132,3 +103,4 @@ const EventPage = () => {
 };
 
 export default EventPage;
+  

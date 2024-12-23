@@ -99,7 +99,7 @@ const HomePage = () => {
 
       {/* Section Story */}
       <section className="Story-sect container mx-auto my-10 ">
-        <h1 className="2xl:text-3xl text-2xl font-bold text-main ">Story</h1>
+        <h1 className="2xl:text-3xl text-2xl font-bold text-main ">Short Story</h1>
         <div className="w-full h-[1px]  my-4 bg-gray-300"></div>
         <Story />
       </section>

@@ -12,66 +12,70 @@ const truncateText = (text, wordLimit) => {
   return text;
 };
 
-const right = () => {
+// Fungsi untuk mengurutkan berdasarkan tanggal terbaru
+const sortByDate = (a, b) => new Date(b.date) - new Date(a.date);
+
+const Right = () => {
+  // Urutkan popularNews dan editorChoice berdasarkan tanggal
+  const sortedPopularNews = [...popularNews].sort(sortByDate);
+  const sortedEditorChoice = [...editorChoice].sort(sortByDate);
+
   return (
     <div className="lg:col-span-3">
+      {/* Popular News */}
       <h2 className="text-2xl font-bold border-b pb-2 mb-4 text-main">
         Popular News
       </h2>
       <div className="space-y-1 divide-y divide-gray-300">
-        {popularNews.map((news) => (
-          <div key={news.id} className="flex flex-col space-y-4 py-4">
-           
-
-            <div className="flex justify-start  gap-4">
-            <div className="relative 2xl:w-[170px] 2xl:h-[100px] w-[200px] h-[100px]">
-              <Image
-                src={news.image}
-                alt={news.title}
-                fill
-                style={{ objectFit: "cover" }} // Gambar mengisi wrapper
-                className="rounded-lg"
-              />
-            </div>
-            <div className="w-[70%] flex flex-col justify-between items-start">
-            <Link href={`/news/${news.slug}`}>
-                <h3 className="2xl:text-sm text-sm font-bold hover:underline cursor-pointer">
-                  {truncateText(news.title, 11)} {/* Batasi hingga 10 kata */}
-                </h3>
-              </Link>
-              <p className="text-sm text-gray-600">{news.date}</p>
+        {sortedPopularNews.map((news) => (
+          <div key={`${news.id}-${news.type}`} className="flex flex-col space-y-4 py-4">
+            <div className="flex justify-start gap-4">
+              <div className="relative 2xl:w-[170px] 2xl:h-[100px] w-[200px] h-[100px]">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="w-[70%] flex flex-col justify-between items-start">
+                <Link href={`/news/${news.slug}`}>
+                  <h3 className="2xl:text-sm text-sm font-bold hover:underline cursor-pointer">
+                    {truncateText(news.title, 11)}
+                  </h3>
+                </Link>
+                <p className="text-sm text-gray-600">{news.date}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Editor Section */}
+      {/* Editor Choice */}
       <h2 className="text-2xl font-bold border-b pb-2 mb-4 mt-5 text-main">
         Editor Choice
       </h2>
       <div className="space-y-1 divide-y divide-gray-300">
-        {editorChoice.map((news) => (
-          <div key={news.id} className="flex flex-col space-y-4 py-4">
-           
-
-            <div className="flex justify-start  gap-4">
-            <div className="relative 2xl:w-[170px] 2xl:h-[100px] w-[200px] h-[100px]">
-              <Image
-                src={news.image}
-                alt={news.title}
-                fill
-                style={{ objectFit: "cover" }} // Gambar mengisi wrapper
-                className="rounded-lg"
-              />
-            </div>
-            <div className="w-[70%] flex flex-col justify-between items-start">
-            <Link href={`/news/${news.slug}`}>
-                <h3 className="2xl:text-sm text-sm font-bold hover:underline cursor-pointer">
-                  {truncateText(news.title, 11)} {/* Batasi hingga 10 kata */}
-                </h3>
-              </Link>
-              <p className="text-sm text-gray-600">{news.date}</p>
+        {sortedEditorChoice.map((news) => (
+          <div key={`${news.id}-${news.type}`} className="flex flex-col space-y-4 py-4">
+            <div className="flex justify-start gap-4">
+              <div className="relative 2xl:w-[170px] 2xl:h-[100px] w-[200px] h-[100px]">
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="w-[70%] flex flex-col justify-between items-start">
+                <Link href={`/news/${news.slug}`}>
+                  <h3 className="2xl:text-sm text-sm font-bold hover:underline cursor-pointer">
+                    {truncateText(news.title, 11)}
+                  </h3>
+                </Link>
+                <p className="text-sm text-gray-600">{news.date}</p>
               </div>
             </div>
           </div>
@@ -81,4 +85,4 @@ const right = () => {
   );
 };
 
-export default right;
+export default Right;

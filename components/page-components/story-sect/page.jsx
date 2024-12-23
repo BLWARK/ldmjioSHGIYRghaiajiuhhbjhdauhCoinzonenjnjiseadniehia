@@ -10,9 +10,10 @@ const StorySect = () => {
   const [currentStory, setCurrentStory] = useState(null);
   const [contentIndex, setContentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [videoDuration, setVideoDuration] = useState(0);
+  const videoRef = useRef(null);
   const requestRef = useRef(null);
   const startTimeRef = useRef(null);
-  const intervalRef = useRef(null);
 
   const openStory = (story) => {
     setCurrentStory(story);
@@ -43,18 +44,30 @@ const StorySect = () => {
       }
     };
 
-    intervalRef.current = requestAnimationFrame(animate);
+    requestRef.current = requestAnimationFrame(animate);
   };
 
   useEffect(() => {
     if (currentStory && currentStory.content[contentIndex]) {
-      setProgress(0);
-      startProgressAnimation(currentStory.content[contentIndex].duration);
+      if (currentStory.content[contentIndex].type === "video" && videoRef.current) {
+        const handleLoadedMetadata = () => {
+          const duration = videoRef.current.duration * 1000; // Durasi dalam milidetik
+          setVideoDuration(duration);
+          startProgressAnimation(duration);
+        };
+
+        videoRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
+
+        return () => {
+          videoRef.current?.removeEventListener("loadedmetadata", handleLoadedMetadata);
+        };
+      } else {
+        startProgressAnimation(currentStory.content[contentIndex].duration);
+      }
     }
 
     return () => {
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
-      if (intervalRef.current) cancelAnimationFrame(intervalRef.current);
     };
   }, [contentIndex, currentStory]);
 
@@ -83,7 +96,8 @@ const StorySect = () => {
             <Image
               src={stories[0].thumbnail}
               alt={`Story ${colIndex}`}
-              fill
+              width={200}
+              height={250}
               style={{ objectFit: "cover" }}
               className="rounded-lg"
             />
@@ -97,43 +111,40 @@ const StorySect = () => {
       {/* Desktop View: Grid Layout */}
       <div className="hidden lg:grid grid-cols-5 gap-4">
         {storyData.map((stories, colIndex) => (
-          <div key={colIndex} className="relative w-[280px] h-[400px] cursor-pointer">
+          <div
+            key={colIndex}
+            className="relative w-[280px] h-full cursor-pointer"
+            onClick={() => openStory(stories[0])}
+          >
             <Image
               src={stories[0].thumbnail}
               alt={`Story ${colIndex}`}
-              fill
-              style={{ objectFit: "cover" }}
+              width={280}
+              height={400}
+              style={{ objectFit: "contain" }}
               className="rounded-lg"
-              onClick={() => openStory(stories[0])}
             />
-            <div
-              className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-30 rounded-lg"
-              onClick={() => openStory(stories[0])}
-            >
+            <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-30 rounded-lg">
               <IoPlay className="text-white text-5xl" />
             </div>
           </div>
         ))}
       </div>
 
-      
-            
-
       {/* Popup Modal */}
       {isOpen && currentStory && currentStory.content && (
-        <div className="fixed inset-0 flex justify-center items-center 2xl:p-0 p-3 bg-main bg-opacity-90 z-50">
+        <div className="fixed inset-0 flex justify-center items-center p-3 bg-main bg-opacity-90 z-50">
           {/* Close Button */}
           <button
-            className="absolute top-[150px] right-4 text-white text-3xl z-10"
+            className="absolute top-[10px] right-4 text-white text-3xl z-10"
             onClick={() => setIsOpen(false)}
           >
             <IoClose />
           </button>
 
-          <div className="w-[600px] h-[800px] flex justify-center items-center rounded relative overflow-hidden">
-
+          <div className="w-[600px] h-[900px] flex justify-center items-center rounded relative overflow-hidden">
             {/* Progress Bars */}
-            <div className="absolute top-2 left-0 w-full flex space-x-1 z-10">
+            <div className="absolute -top-[1px] left-0 w-full flex space-x-1 z-10">
               {currentStory.content.map((_, idx) => (
                 <div
                   key={idx}
@@ -154,34 +165,37 @@ const StorySect = () => {
               ))}
             </div>
 
-
             {/* Navigation Arrows */}
             <button
-              className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-3xl p-2 z-20 bg-black bg-opacity-50 rounded-full"
+              className="absolute top-1/2 left-2 text-white text-3xl z-20 bg-black bg-opacity-50 rounded-full"
               onClick={prevContent}
-              disabled={contentIndex === 0}
             >
               <IoChevronBack />
             </button>
             <button
-              className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white text-3xl p-2 z-20 bg-black bg-opacity-50 rounded-full"
+              className="absolute top-1/2 right-2 text-white text-3xl z-20 bg-black bg-opacity-50 rounded-full"
               onClick={nextContent}
-              disabled={contentIndex === currentStory.content.length - 1}
             >
               <IoChevronForward />
             </button>
 
             {/* Content Display */}
-            <div className="relative w-full h-full ">
-              {currentStory.content[contentIndex]?.src ? (
+            <div className="relative w-full h-full">
+              {currentStory.content[contentIndex]?.type === "video" ? (
+                <video
+                  ref={videoRef}
+                  src={currentStory.content[contentIndex].src}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain"
+                />
+              ) : (
                 <Image
                   src={currentStory.content[contentIndex].src}
                   alt={`Content ${contentIndex + 1}`}
                   fill
                   style={{ objectFit: "contain" }}
                 />
-              ) : (
-                <div className="text-white text-center">No content available</div>
               )}
             </div>
           </div>

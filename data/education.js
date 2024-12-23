@@ -17,7 +17,7 @@ const academy = [
         <p>NFTs are widely used in digital art, gaming, and virtual real estate. They allow artists to sell their work directly to consumers and retain royalties through smart contracts.</p>
       `,
       tags: ["NFT", "Blockchain", "Digital Ownership"],
-      category: ["education", "blockchain"],
+      category: ["academy", "blockchain"],
       authorIds: [1],
     },
     {
@@ -38,7 +38,7 @@ const academy = [
         <p>Blockchain is used in various industries, including finance, healthcare, supply chain, and voting systems, to enhance efficiency and reduce fraud.</p>
       `,
       tags: ["Blockchain", "Technology", "Decentralization"],
-      category: ["education", "technology"],
+      category: ["academy", "technology"],
       authorIds: [2],
     },
     {
@@ -59,7 +59,7 @@ const academy = [
         <p>Tokenomics helps investors and developers understand how a cryptocurrency will perform and sustain itself in the long term.</p>
       `,
       tags: ["Tokenomics", "Crypto", "Economy"],
-      category: ["education", "crypto"],
+      category: ["academy", "crypto"],
       authorIds: [1],
     },
     {
@@ -80,7 +80,7 @@ const academy = [
         <p>Predicting market trends helps investors make informed decisions, reduce risks, and maximize returns in the volatile crypto space.</p>
       `,
       tags: ["Market Trends", "Prediction", "Crypto"],
-      category: ["education", "finance"],
+      category: ["academy", "finance"],
       authorIds: [3],
     },
   ];

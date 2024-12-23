@@ -44,7 +44,7 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="2xl:flex-row flex-col flex py-8 px-2 text-black">
+    <div className="2xl:flex-row flex-col flex 2xl:py-8 2xl:mt-0 mt-4 mb-10 px-2 text-black">
       
 
       {/* Event Info */}
@@ -56,19 +56,19 @@ const EventDetails = () => {
         {/* Left Content */}
         <div className="lg:w-[90%]">
           <div className="mb-4 space-y-2 text-gray-600">
-            <p className="flex items-center gap-2">
-              <IoLocationOutline className="text-blue-600" />
+            <p className="flex items-center gap-2 2xl:text-[16px] text-[12px] ">
+              <IoLocationOutline className="text-blue-600 2xl:text-[20px] text-[18px] justify-start items-start flex" />
               {event.location}
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 2xl:text-[16px] text-[12px]">
               <IoCalendarOutline className="text-blue-600" />
                {event.date} | {event.time} 
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 2xl:text-[16px] text-[12px]">
               <IoPricetagOutline className="text-blue-600" />
               <strong>Price:</strong> {event.price} | <strong>Type:</strong> {event.type}
             </p>
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 2xl:text-[16px] text-[12px]">
               <FaUsers className="text-blue-600" />
               <strong>Attendees:</strong> {event.attendees.length} People
             </p>
@@ -92,7 +92,7 @@ const EventDetails = () => {
           </div>
         </div>
          {/* Ticket and Register */}
-         <div className="2xl:flex-row flex-col bg-blue-50 p-6 py-10 rounded-lg flex justify-between items-center mb-6 gap-8">
+         <div className="2xl:flex-row flex-col bg-blue-50 p-6 py-10 rounded-lg flex 2xl:justify-between justify-start items-start mb-6 gap-8">
             <div>
               <h3 className="font-semibold text-main">Welcome! To join the event, please register</h3>
               <p className="text-gray-600 text-sm">
@@ -104,11 +104,6 @@ const EventDetails = () => {
             </button>
           </div>
         </div>
-
-        
-        
-
-
 
         {/* Right Sidebar */}
         <div className="lg:w-[90%] flex flex-col justify-start items-start ">

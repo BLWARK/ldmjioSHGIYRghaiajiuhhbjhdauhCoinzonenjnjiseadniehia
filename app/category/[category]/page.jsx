@@ -8,9 +8,10 @@ import headlines from "../../../data/headline";
 import additionalNews from "../../../data/additionalNews";
 import popularNews from "../../../data/popularNews";
 import editorChoice from "../../../data/editorChoice"
+import academy from "../../../data/education"
 
 // Gabungkan semua data artikel
-const allArticles = [...headlines, ...additionalNews, ...popularNews, ...editorChoice];
+const allArticles = [...headlines, ...additionalNews, ...popularNews, ...editorChoice, ...academy];
 
 const CategoryPage = () => {
   const { category } = useParams(); // Ambil parameter kategori dari URL

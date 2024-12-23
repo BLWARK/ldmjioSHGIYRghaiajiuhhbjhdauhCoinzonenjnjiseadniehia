@@ -6,7 +6,7 @@ const additionalNews = [
     title: "Spekulasi China Miliki 194.000 Bitcoin Ternyata Tidak Berdasar",
     type: "additional",
     image: "/Add1.jpg",
-    date: "Thu 25 Aug 2024",
+    date: "Dec 16 2024",
     description:
       "Spekulasi China Miliki 194.000 Bitcoin Ternyata Tidak Berdasar",
     slug: "Spekulasi-China-Miliki-194.000-Bitcoin-Ternyata-Tidak-Berdasar",
@@ -28,7 +28,7 @@ const additionalNews = [
     title: "Eric Trump: Kripto dan Blockchain Akan Lampaui Perbankan Tradisional",
     type: "additional",
     image: "/Add2.jpg",
-    date: "Thu 12 Dec 2024",
+    date: "Dec 16 2024",
     description:
       "Eric Trump: Kripto dan Blockchain Akan Lampaui Perbankan Tradisional",
     slug: "Eric-Trump-Kripto-dan-Blockchain-Akan-Lampaui-Perbankan-Tradisional",
@@ -51,7 +51,7 @@ const additionalNews = [
     title: "Harga Dogecoin (DOGE) Bertahan di $0,38, Potensi Kenaikan ke $1 pada 2025",
     type: "additional",
     image: "/Add3.jpg",
-    date: "Dec 10 2024",
+    date: "Dec 15 2024",
     description:
       "Harga Dogecoin (DOGE) Bertahan di $0,38, Potensi Kenaikan ke $1 pada 2025",
     slug: "Harga-Dogecoin-(DOGE)-Bertahan-di-38-Potensi-Kenaikan-ke-1-pada-2025",
@@ -72,7 +72,7 @@ const additionalNews = [
     title: "Floki Luncurkan Kartu Debit Kripto di Eropa, Dukung Pembayaran dengan Visa dan Mastercard",
     type: "additional",
     image: "/Add4.jpg",
-    date: "Dec 10 2024",
+    date: "Dec 15 2024",
     description:
       "Floki Luncurkan Kartu Debit Kripto di Eropa, Dukung Pembayaran dengan Visa dan Mastercard",
     slug: "Floki-Luncurkan-Kartu-Debit-Kripto-di-Eropa-Dukung-Pembayaran-dengan-Visa-dan-Mastercard",
