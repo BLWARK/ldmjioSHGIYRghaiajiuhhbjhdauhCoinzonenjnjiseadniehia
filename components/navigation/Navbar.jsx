@@ -261,13 +261,13 @@ const Navbar = () => {
             )}
           </li>
           <li>
-            <button
+            <a href="/category/academy"
               className="flex items-center justify-between w-full hover:text-blue-400"
               // onClick={() => toggleDropdown("business")}
             >
-              <span>Business</span>
+              <span>Academy</span>
               {/* <FiChevronDown /> */}
-            </button>
+            </a>
             {/* {openDropdown === "business" && (
               <ul className="pl-4 mt-2 space-y-2 text-sm">
                 <li>

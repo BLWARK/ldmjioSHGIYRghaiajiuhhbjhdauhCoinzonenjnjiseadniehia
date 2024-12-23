@@ -90,7 +90,7 @@ const StorySect = () => {
         {storyData.map((stories, colIndex) => (
           <div
             key={colIndex}
-            className="relative min-w-[200px] h-[250px] flex-shrink-0 cursor-pointer"
+            className="relative min-w-[200px] h-full flex-shrink-0 cursor-pointer"
             onClick={() => openStory(stories[0])}
           >
             <Image

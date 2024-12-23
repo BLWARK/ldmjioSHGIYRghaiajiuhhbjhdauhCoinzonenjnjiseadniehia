@@ -63,7 +63,7 @@ const CategoryPage = () => {
       </div>
       </div>
       
-      <div className="2xl:w-[50%] w-full 2xl:pl-16 ">
+      <div className="2xl:w-[50%] w-full 2xl:pl-16 mt-10">
       <Right/>
       </div>
     </div>

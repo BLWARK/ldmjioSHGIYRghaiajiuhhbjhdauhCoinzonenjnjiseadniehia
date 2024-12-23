@@ -61,7 +61,7 @@ const HomePage = () => {
             <Center />
           </div>
           {/* Right Section */}
-          <div className="lg:col-span-3 order-2 lg:order-3">
+          <div className="lg:col-span-3 order-2 lg:order-3 2xl:mt-0 mt-10">
             <Right />
           </div>
         </div>
