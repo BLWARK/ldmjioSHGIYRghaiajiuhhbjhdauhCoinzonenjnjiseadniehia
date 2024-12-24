@@ -18,8 +18,8 @@ const LoginModal = ({ onClose, onSwitchToSignUp }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 text-black">
-      <div className="relative bg-white rounded-lg p-6 w-[400px] shadow-lg">
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 text-black 2xl:px-0 px-3">
+      <div className="relative bg-white rounded-lg p-6 w-[400px] h-[400px] shadow-lg">
         {/* Tombol Close */}
         <button
           onClick={onClose}

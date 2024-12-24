@@ -378,11 +378,62 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <div className="flex 2xl:hidden xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6 py-10 mt-5 border-t  border-gray-400">
+        {/* Login / User Info */}
+        <div>
+            {user ? (
+              <div className="relative" ref={profileMenuRef}>
+                <button onClick={toggleProfileMenu} className="flex px-3 py-5 items-center gap-4 focus:outline-none border-t w-full gray-400 mt-8">
+                  <Image
+                    src={user.photo}
+                    alt={user.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover border border-gray-300"
+                  />
+                  <span className="text-white font-medium">{user.nickname}</span>
+                </button>
+
+                {/* Profile Dropdown */}
+                {isProfileMenuOpen && (
+                  <div className="absolute rightd-0 mt-2 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+                    <ul className="text-gray-700">
+                      <li className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
+                        <FiUser /> My Account
+                      </li>
+                      <li className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
+                        <FiGrid /> Dashboard
+                      </li>
+                      <hr />
+                      <li  className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
+                        <Link href="/plan" className="flex items-center gap-2 text-black hover:text-main w-full">
+                        <FiUploadCloud /> Upgrade Plan
+                        </Link>
+                      </li>
+                      <li
+                        onClick={logout}
+                        className="flex items-center gap-2 p-3 hover:bg-red-100 cursor-pointer text-red-600"
+                      >
+                        <FiLogOut /> Logout
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                onClick={() => setIsLoginOpen(true)}
+                className="text-white pt-5 px-5 rounded hover:bg-opacity-90 flex justify-start items-start w-full gap-2 border-t border-gray-400 mt-8"
+              >
+                Login/Signup
+                <FiArrowRight size={24} />
+              </button>
+            )}
+          </div>
+        <a href="/plan" className="flex 2xl:hidden xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6 py-10 mt-5 border-t  border-gray-400">
           <span className="font-semibold text-[16px]">Subscribe CoinZone</span>
           <span className="text-xs">Get exclusive content just $200/month</span>
           <FiArrowRight size={24} className="mt-4" />
-        </div>
+        </a>
       </div>
       {/* Modal Login */}
       {isLoginOpen && (

@@ -51,7 +51,7 @@ const Plan = () => {
         <div className="p-6 h-[700px] border rounded-lg shadow-md bg-main text-white flex flex-col justify-between">
             <div className="">
           <h2 className="text-2xl font-semibold ">Premium Plan</h2>
-          <p className="text-white font-bold text-3xl py-5">Rp 1.500.000/month</p>
+          <p className="text-white font-bold 2xl:text-3xl text-2xl py-5">Rp 1.500.000/month</p>
           <p className="text-white mb-4">
             Enjoy unlimited access to premium content and exclusive features.
           </p>
