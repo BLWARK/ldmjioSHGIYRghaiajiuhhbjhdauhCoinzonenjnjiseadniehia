@@ -50,3 +50,33 @@ body {
   display: flex; /* Flex untuk horizontal slider */
   min-width: 100%; /* Wajib agar animasi berjalan */
 }
+
+/* styles.module.css */
+.plan-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.plan-card {
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan-free {
+  background-color: #fff;
+  color: #333;
+}
+
+.plan-premium {
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+.plan-button {
+  margin-top: 1.5rem;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+}

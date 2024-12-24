@@ -1,23 +1,60 @@
-const authors = [
-    {
-      id: 1,
-      name: "John Doe",
-      title: "Financial Analyst",
-      photo: "/rover.jpg", // Path ke foto author
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      title: "Blockchain Specialist",
-      photo: "/rover.jpg",
-    },
-    {
-      id: 3,
-      name: "Acong De Conte",
-      title: "Master of Hacking",
-      photo: "/rover.jpg",
-    },
-  ];
-  
-  export default authors;
-  
+const users = [
+  {
+    id: 1,
+    name: "Rhonald Bastian",
+    nickname: "Nobits",
+    email: "rozu0980@gmail.com",
+    phone: "+1-555-0101",
+    address: "123 Finance St, Wall Street, NY",
+    title: "Financial Analyst",
+    photo: "/rover.jpg", // Path ke foto user
+    role: "Master", // Master | Super Admin | Editor | Contributor
+    status: "Active", // Active | Pending | Suspended
+    lastLogin: "2024-06-17",
+    password: "password123", // Tambahkan password default
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    nickname: "Jane",
+    email: "jane.smith@example.com",
+    phone: "+1-555-0202",
+    address: "456 Blockchain Ave, Silicon Valley, CA",
+    title: "Blockchain Specialist",
+    photo: "/rover.jpg",
+    role: "Super Admin",
+    status: "Active",
+    lastLogin: "2024-06-16",
+    password: "password123",
+  },
+  {
+    id: 3,
+    name: "Acong De Conte",
+    nickname: "Acong",
+    email: "acong.deconte@example.com",
+    phone: "+62-812-3456-7890",
+    address: "Jl. Merpati 21, Jakarta, Indonesia",
+    title: "Master of Hacking",
+    photo: "/rover.jpg",
+    role: "Editor",
+    status: "Pending",
+    lastLogin: "2024-06-10",
+    password: "password123",
+  },
+  {
+    id: 4,
+    name: "Sarah Connor",
+    nickname: "SarahC",
+    email: "sarah.connor@example.com",
+    phone: "+44-700-123-4567",
+    address: "10 Cyberdyne St, London, UK",
+    title: "Cybersecurity Specialist",
+    photo: "/rover.jpg",
+    role: "Contributor",
+    status: "Active",
+    lastLogin: "2024-06-15",
+    password: "password123",
+  },
+];
+
+export default users;

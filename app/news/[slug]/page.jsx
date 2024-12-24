@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Author from "@/components/author/page";
@@ -13,9 +13,12 @@ import editorChoice from "@/data/editorChoice";
 import additionalNews from "@/data/additionalNews";
 import DOMPurify from "dompurify";
 import academy from "@/data/education";
+import { FaPlay, FaPause } from "react-icons/fa";
 
 const NewsDetail = () => {
   const [sanitizedContent, setSanitizedContent] = useState(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const speechRef = useRef(null); // Untuk mengontrol Speech API
   const { slug } = useParams();
 
   const allArticles = [
@@ -38,10 +41,40 @@ const NewsDetail = () => {
     }
   }, [newsItem.content]);
 
+  // Fungsi untuk memulai atau menghentikan pembacaan teks
+  const toggleSpeech = () => {
+    if (!window.speechSynthesis) {
+      alert("Text-to-Speech tidak didukung di browser ini!");
+      return;
+    }
+  
+    if (isSpeaking) {
+      // Jika sedang membaca, hentikan
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+    } else {
+      // Bersihkan konten dari tag HTML
+      const plainTextContent = newsItem.content.replace(/<\/?[^>]+(>|$)/g, ""); // Menghapus semua tag HTML
+  
+      const utterance = new SpeechSynthesisUtterance(plainTextContent);
+      utterance.lang = "id-ID"; // Bahasa Indonesia
+      utterance.rate = 1; // Kecepatan pembacaan normal
+  
+      speechRef.current = utterance;
+  
+      window.speechSynthesis.speak(utterance);
+      setIsSpeaking(true);
+  
+      utterance.onend = () => {
+        setIsSpeaking(false);
+      };
+    }
+  };
+  
   // Sort and select the latest 6 articles for the "More News" section
   const latestArticles = allArticles
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 9);
+    .slice(0, 6);
 
   return (
     <div className="container mx-auto 2xl:py-8 py-2 text-black">
@@ -49,7 +82,9 @@ const NewsDetail = () => {
         {/* Konten Utama */}
         <div className="konten-utama lg:col-span-8 2xl:border-r border-gray-300 2xl:pr-6 pr-0">
           <div className="flex flex-col">
-            <h1 className="2xl:text-[42px] text-[24px] font-bold ">{newsItem.title}</h1>
+            <h1 className="2xl:text-[42px] text-[24px] font-bold ">
+              {newsItem.title}
+            </h1>
             <div className="py-4">
               <div className="flex flex-wrap gap-2">
                 {newsItem.tags.map((tag, index) => (
@@ -65,12 +100,27 @@ const NewsDetail = () => {
             </div>
 
             {/* Author Section */}
-            <div className="wrap-author-date w-full 2xl:justify-between flex 2xl:flex-row flex-col 2xl:items-center justify-start items-start py-4">
+            <div className="wrap-author-date w-full flex justify-between items-center py-4">
               <Author />
-              <div className="date-wrap flex flex-col 2xl:justify-end 2xl:items-end justify-start items-start 2xl:mt-0 mt-5 gap-1">
+              <div className="date-wrap flex flex-col text-right gap-1">
                 <p className="text-[12px] text-gray-600">Last Updated:</p>
-                <p className="text-[16px] font-bold text-black ">{newsItem.date}</p>
+                <p className="text-[16px] font-bold text-black ">
+                  {newsItem.date}
+                </p>
               </div>
+            </div>
+
+             {/* Tombol Text-to-Speech */}
+             <div className="flex items-center gap-4 my-6">
+              <button
+                onClick={toggleSpeech}
+                className={`flex items-center gap-2 px-4 py-2 rounded-md text-white ${
+                  isSpeaking ? "bg-red-500" : "bg-green-500"
+                } hover:opacity-80`}
+              >
+                {isSpeaking ? <FaPause /> : <FaPlay />}
+                {isSpeaking ? "Stop Reading" : "Read Aloud"}
+              </button>
             </div>
 
             <div className="relative w-full 2xl:h-[500px] h-[250px] rounded-lg overflow-hidden mb-6">
@@ -83,10 +133,13 @@ const NewsDetail = () => {
               />
             </div>
 
+            {/* Teks Berita */}
             <p
               className="text-[16px] leading-7 text-gray-800"
               dangerouslySetInnerHTML={{ __html: sanitizedContent }}
             />
+
+           
 
             {/* Share Section */}
             <Share />
@@ -99,7 +152,10 @@ const NewsDetail = () => {
               <h2 className="text-[24px] font-bold mb-6">Latest News</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {latestArticles.map((article) => (
-                  <div key={`${article.type}-${article.id}-${article.slug}`} className="border rounded-lg shadow-md overflow-hidden">
+                  <div
+                    key={`${article.type}-${article.id}-${article.slug}`}
+                    className="border rounded-lg shadow-md overflow-hidden"
+                  >
                     <div className="relative w-full h-[170px]">
                       <Image
                         src={article.image}
@@ -110,28 +166,20 @@ const NewsDetail = () => {
                       />
                     </div>
                     <div className="p-4">
-                    <Link
+                      <Link
                         href={`/news/${article.slug}`}
                         className="text-black hover:underline text-sm"
                       >
-                      <h3 className="text-lg font-bold mb-2">{article.title}</h3>
+                        <h3 className="text-lg font-bold mb-2">
+                          {article.title}
+                        </h3>
                       </Link>
-                      <p className="text-[12px] text-gray-600 mb-4">{article.date}</p>
-                     
-                      
-                      
+                      <p className="text-[12px] text-gray-600 mb-4">
+                        {article.date}
+                      </p>
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* View All Button */}
-              <div className="mt-6 text-center flex justify-start items-start">
-                <Link href="/all-news">
-                  <button className="px-6 py-3 border border-main text-main hover:bg-main hover:text-white rounded-md transition">
-                    View All News
-                  </button>
-                </Link>
               </div>
             </div>
           </div>

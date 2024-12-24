@@ -46,7 +46,7 @@ const editorChoice= [
     date: "Dec 21 2024",
     description:
       "Singapura & Hong Kong Pimpin Revolusi Blockchain Global: Mengapa AS Tertinggal?",
-    slug: "Singapura-dan-HongKong-Pimpin-Revolusi-Blockchain-Global-Mengapa-AS-Tertinggal?",
+    slug: "Singapura-dan-HongKong-Pimpin-Revolusi-Blockchain-Global-Mengapa-AS-Tertinggal",
     content: `
       <p>Singapura dan Hong Kong telah muncul sebagai pemimpin dalam adopsi teknologi blockchain dan kripto, sementara Amerika Serikat tampaknya tertinggal dalam perkembangan ini.</p>
       <br>
