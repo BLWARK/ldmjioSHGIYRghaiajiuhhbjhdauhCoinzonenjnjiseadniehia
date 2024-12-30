@@ -15,9 +15,9 @@ const users = [
   },
   {
     id: 2,
-    name: "Jane Smith",
-    nickname: "Jane",
-    email: "jane.smith@example.com",
+    name: "Logan Wolfrine",
+    nickname: "Logan Wolfrine",
+    email: "logan@gmail.com",
     phone: "+1-555-0202",
     address: "456 Blockchain Ave, Silicon Valley, CA",
     title: "Blockchain Specialist",
@@ -25,7 +25,7 @@ const users = [
     role: "Super Admin",
     status: "Active",
     lastLogin: "2024-06-16",
-    password: "password123",
+    password: "logan123",
   },
   {
     id: 3,
