@@ -16,10 +16,7 @@ const allNews = [
   ...headlines.map((item) => ({ ...item, uniqueId: `headline-${item.id}` })),
   ...popularNews.map((item) => ({ ...item, uniqueId: `popular-${item.id}` })),
   ...editorChoice.map((item) => ({ ...item, uniqueId: `editor-${item.id}` })),
-  ...additionalNews.map((item) => ({
-    ...item,
-    uniqueId: `additional-${item.id}`,
-  })),
+  ...additionalNews.map((item) => ({...item, uniqueId: `additional-${item.id}`,})),
 ];
 
 // Filter berita dengan tag "bitcoin" dan batasi hingga 5 berita

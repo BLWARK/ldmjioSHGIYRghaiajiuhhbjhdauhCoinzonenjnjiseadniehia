@@ -43,9 +43,9 @@ const users = [
   },
   {
     id: 4,
-    name: "Sarah Connor",
-    nickname: "SarahC",
-    email: "sarah.connor@example.com",
+    name: "fay muhammad",
+    nickname: "Fay",
+    email: "fayM@gmail.com",
     phone: "+44-700-123-4567",
     address: "10 Cyberdyne St, London, UK",
     title: "Cybersecurity Specialist",
@@ -53,7 +53,7 @@ const users = [
     role: "Contributor",
     status: "Active",
     lastLogin: "2024-06-15",
-    password: "password123",
+    password: "admin123",
   },
 ];
 
