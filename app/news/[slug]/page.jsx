@@ -47,7 +47,7 @@ const NewsDetail = () => {
       alert("Text-to-Speech tidak didukung di browser ini!");
       return;
     }
-  
+
     if (isSpeaking) {
       // Jika sedang membaca, hentikan
       window.speechSynthesis.cancel();
@@ -55,22 +55,22 @@ const NewsDetail = () => {
     } else {
       // Bersihkan konten dari tag HTML
       const plainTextContent = newsItem.content.replace(/<\/?[^>]+(>|$)/g, ""); // Menghapus semua tag HTML
-  
+
       const utterance = new SpeechSynthesisUtterance(plainTextContent);
       utterance.lang = "id-ID"; // Bahasa Indonesia
       utterance.rate = 1; // Kecepatan pembacaan normal
-  
+
       speechRef.current = utterance;
-  
+
       window.speechSynthesis.speak(utterance);
       setIsSpeaking(true);
-  
+
       utterance.onend = () => {
         setIsSpeaking(false);
       };
     }
   };
-  
+
   // Sort and select the latest 6 articles for the "More News" section
   const latestArticles = allArticles
     .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -110,8 +110,8 @@ const NewsDetail = () => {
               </div>
             </div>
 
-             {/* Tombol Text-to-Speech */}
-             <div className="flex items-center gap-4 my-6">
+            {/* Tombol Text-to-Speech */}
+            <div className="flex items-center gap-4 my-6">
               <button
                 onClick={toggleSpeech}
                 className={`flex items-center gap-2 px-4 py-2 rounded-md text-white ${
@@ -138,8 +138,6 @@ const NewsDetail = () => {
               className="text-[16px] leading-7 text-gray-800"
               dangerouslySetInnerHTML={{ __html: sanitizedContent }}
             />
-
-           
 
             {/* Share Section */}
             <Share />
@@ -180,6 +178,14 @@ const NewsDetail = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+              {/* View All Button */}
+              <div className="mt-6 text-center flex justify-start items-start">
+                <Link href="/all-news">
+                  <button className="px-6 py-3 border-main border text-main hover:text-white rounded hover:bg-main transition">
+                    View All News
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

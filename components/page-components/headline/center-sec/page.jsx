@@ -123,8 +123,8 @@ const Center = () => {
       {/* View All Button */}
       <div className="mt-6 text-center flex justify-start items-start">
         <Link href="/all-news">
-          <button className="px-6 py-2 border-main border text-main hover:text-white rounded hover:bg-main transition">
-            View All
+          <button className="px-6 py-3 border-main border text-main hover:text-white rounded hover:bg-main transition">
+            View All News
           </button>
         </Link>
       </div>

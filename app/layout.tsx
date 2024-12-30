@@ -4,6 +4,7 @@ import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/footer/Footer";
 import TradingViewWidget from "@/components/tradingView/TradingViewWidget";
 import { AuthProvider } from "@/context/AuthContext";
+import StickyBanner from "@/components/stickyBanner/StickyBanner"
 // import ScrollTop from "@/components/scroll-to-top/Scroll"
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           </AuthProvider>
           <Footer />
           {/* <ScrollTop/> */}
+          <StickyBanner/>
         </div>
       </body>
     </html>

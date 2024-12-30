@@ -2,11 +2,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
-import Link from "next/link"
+import Link from "next/link";
 import LoginModal from "@/components/modal/LoginModal";
 import SignUpModal from "@/components/modal/SignUpModal";
 import ModalUpgradePlan from "@/components/modal/ModalUpgradePlan";
-import { FiArrowRight, FiChevronDown, FiUser, FiGrid, FiLogOut, FiUploadCloud } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiChevronDown,
+  FiUser,
+  FiGrid,
+  FiLogOut,
+  FiUploadCloud,
+} from "react-icons/fi";
 import HamburgerMenu from "react-hamburger-menu"; // Import Hamburger React
 import Image from "next/image";
 
@@ -31,20 +38,9 @@ const Navbar = () => {
 
   const isActive = (path) => pathname === path;
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target)) {
-        setIsProfileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-
+  
+  // Fungsi untuk Menutup Dropdown saat Klik di Luar
+  
   return (
     <div className="w-full">
       {/* Top Bar */}
@@ -91,7 +87,10 @@ const Navbar = () => {
             </a>
           </div>
           {/* Desktop Subscribe Section */}
-          <a href="/plan" className="hidden 2xl:flex xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6">
+          <a
+            href="/plan"
+            className="hidden 2xl:flex xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6"
+          >
             <span className="font-semibold text-[28px]">
               Subscribe CoinZone
             </span>
@@ -209,39 +208,62 @@ const Navbar = () => {
             </div>
           </div>
 
-           {/* Login / User Info */}
-           <div>
+          {/* Login / User Info */}
+          <div>
             {user ? (
               <div className="relative" ref={profileMenuRef}>
-                <button onClick={toggleProfileMenu} className="flex items-center gap-4 focus:outline-none">
+                <button
+                  onClick={toggleProfileMenu}
+                  className="flex items-center gap-4 focus:outline-none bg-transparent"
+                >
                   <Image
                     src={user.photo}
                     alt={user.name}
                     width={40}
                     height={40}
-                    className="rounded-full object-cover border border-gray-300"
+                    className="rounded-full object-cover border border-gray-300 border-none outline-none"
                   />
-                  <span className="text-white font-medium">{user.nickname}</span>
+                  <span className="text-white font-medium">
+                    {user.nickname}
+                  </span>
                 </button>
 
                 {/* Profile Dropdown */}
                 {isProfileMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+                  <div
+                    className="absolute right-0 mt-2 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50"
+                    onClick={(e) => e.stopPropagation()} // Mencegah event bubbling
+                  >
                     <ul className="text-gray-700">
-                      <li className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
+                      <li
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer"
+                      >
                         <FiUser /> My Account
                       </li>
-                      <li className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
+                      <li
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer"
+                      >
                         <FiGrid /> Dashboard
                       </li>
                       <hr />
-                      <li  className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
-                        <Link href="/plan" className="flex items-center gap-2 text-black hover:text-main w-full">
-                        <FiUploadCloud /> Upgrade Plan
+                      <li
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer"
+                      >
+                        <Link
+                          href="/plan"
+                          className="flex items-center gap-2 text-black hover:text-main w-full"
+                        >
+                          <FiUploadCloud /> Upgrade Plan
                         </Link>
                       </li>
                       <li
-                        onClick={logout}
+                        onClick={(e) => {
+                          e.stopPropagation(); // Mencegah event bubbling
+                          logout(); // Panggil fungsi logout
+                        }}
                         className="flex items-center gap-2 p-3 hover:bg-red-100 cursor-pointer text-red-600"
                       >
                         <FiLogOut /> Logout
@@ -380,56 +402,77 @@ const Navbar = () => {
         </ul>
         {/* Login / User Info */}
         <div>
-            {user ? (
-              <div className="relative" ref={profileMenuRef}>
-                <button onClick={toggleProfileMenu} className="flex px-3 py-5 items-center gap-4 focus:outline-none border-t w-full gray-400 mt-8">
-                  <Image
-                    src={user.photo}
-                    alt={user.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full object-cover border border-gray-300"
-                  />
-                  <span className="text-white font-medium">{user.nickname}</span>
-                </button>
-
-                {/* Profile Dropdown */}
-                {isProfileMenuOpen && (
-                  <div className="absolute rightd-0 mt-2 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50">
-                    <ul className="text-gray-700">
-                      <li className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
-                        <FiUser /> My Account
-                      </li>
-                      <li className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
-                        <FiGrid /> Dashboard
-                      </li>
-                      <hr />
-                      <li  className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer">
-                        <Link href="/plan" className="flex items-center gap-2 text-black hover:text-main w-full">
-                        <FiUploadCloud /> Upgrade Plan
-                        </Link>
-                      </li>
-                      <li
-                        onClick={logout}
-                        className="flex items-center gap-2 p-3 hover:bg-red-100 cursor-pointer text-red-600"
-                      >
-                        <FiLogOut /> Logout
-                      </li>
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ) : (
+          {user ? (
+            <div className="relative" ref={profileMenuRef}>
               <button
-                onClick={() => setIsLoginOpen(true)}
-                className="text-white pt-5 px-5 rounded hover:bg-opacity-90 flex justify-start items-start w-full gap-2 border-t border-gray-400 mt-8"
+                onClick={toggleProfileMenu}
+                className="flex px-3 py-5 items-center gap-4 focus:outline-none border-t w-full gray-400 mt-8"
               >
-                Login/Signup
-                <FiArrowRight size={24} />
+                <Image
+                  src={user.photo}
+                  alt={user.name}
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover border border-gray-300"
+                />
+                <span className="text-white font-medium">{user.nickname}</span>
               </button>
-            )}
-          </div>
-        <a href="/plan" className="flex 2xl:hidden xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6 py-10 mt-5 border-t  border-gray-400">
+
+              {/* Profile Dropdown */}
+              {isProfileMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+                  <ul className="text-gray-700">
+                    <li
+                      onMouseDown={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer"
+                    >
+                      <FiUser /> My Account
+                    </li>
+                    <li
+                      onMouseDown={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer"
+                    >
+                      <FiGrid /> Dashboard
+                    </li>
+                    <hr />
+                    <li
+                      onMouseDown={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 p-3 hover:bg-gray-100 cursor-pointer"
+                    >
+                      <Link
+                        href="/plan"
+                        className="flex items-center gap-2 text-black hover:text-main w-full"
+                      >
+                        <FiUploadCloud /> Upgrade Plan
+                      </Link>
+                    </li>
+                    <li
+                      onMouseDown={(e) => {
+                        e.stopPropagation();
+                        logout();
+                      }}
+                      className="flex items-center gap-2 p-3 hover:bg-red-100 cursor-pointer text-red-600"
+                    >
+                      <FiLogOut /> Logout
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <button
+              onClick={() => setIsLoginOpen(true)}
+              className="text-white pt-5 px-5 rounded hover:bg-opacity-90 flex justify-start items-start w-full gap-2 border-t border-gray-400 mt-8"
+            >
+              Login/Signup
+              <FiArrowRight size={24} />
+            </button>
+          )}
+        </div>
+        <a
+          href="/plan"
+          className="flex 2xl:hidden xl:hidden lg:hidden md:hidden flex-col items-start gap-2 px-6 py-10 mt-5 border-t  border-gray-400"
+        >
           <span className="font-semibold text-[16px]">Subscribe CoinZone</span>
           <span className="text-xs">Get exclusive content just $200/month</span>
           <FiArrowRight size={24} className="mt-4" />
