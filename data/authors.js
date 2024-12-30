@@ -21,7 +21,7 @@ const users = [
     phone: "+1-555-0202",
     address: "456 Blockchain Ave, Silicon Valley, CA",
     title: "Blockchain Specialist",
-    photo: "/rover.jpg",
+    photo: "/logan.png",
     role: "Super Admin",
     status: "Active",
     lastLogin: "2024-06-16",
