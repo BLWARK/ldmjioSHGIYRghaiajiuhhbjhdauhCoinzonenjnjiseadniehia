@@ -5,16 +5,50 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
+// Fungsi untuk menentukan status event
+const getEventStatus = (eventDate, eventEndTime) => {
+  const now = new Date();
+  const eventStart = new Date(eventDate);
+  const eventEnd = eventEndTime ? new Date(eventEndTime) : eventStart;
+
+  if (now > eventEnd) {
+    return { status: "Complete", style: "bg-green-200 text-green-700" };
+  } else if (now >= eventStart && now <= eventEnd) {
+    return { status: "Ongoing", style: "bg-blue-200 text-blue-700" };
+  } else {
+    return { status: "Upcoming", style: "bg-orange-200 text-orange-700" };
+  }
+};
+
+// Fungsi untuk mengurutkan event berdasarkan status dan tanggal
+const sortEvents = (events) => {
+  return events
+    .map((event) => {
+      const { status, style } = getEventStatus(event.date, event.endDate);
+      return { ...event, status, style };
+    })
+    .sort((a, b) => {
+      // Urutkan berdasarkan status
+      const statusOrder = { Upcoming: 1, Ongoing: 2, Complete: 3 };
+      if (statusOrder[a.status] !== statusOrder[b.status]) {
+        return statusOrder[a.status] - statusOrder[b.status];
+      }
+      // Jika status sama, urutkan berdasarkan tanggal
+      return new Date(a.date) - new Date(b.date);
+    });
+};
+
 const EventPage = () => {
   const [filter, setFilter] = useState("all"); // State untuk filter
 
-  // Filter events berdasarkan tags
+  // Mengurutkan event terlebih dahulu
+  const sortedEvents = sortEvents(events);
+
+  // Filter event berdasarkan status
   const filteredEvents =
     filter === "all"
-      ? events
-      : events.filter((event) =>
-          event.tags.some((tag) => tag.toLowerCase() === filter)
-        );
+      ? sortedEvents
+      : sortedEvents.filter((event) => event.status.toLowerCase() === filter);
 
   return (
     <div className="container flex flex-col w-full mx-auto 2xl:py-20 py-5 px-2 text-black">
@@ -51,26 +85,19 @@ const EventPage = () => {
                 className="rounded-t-lg"
               />
             </div>
+
             {/* Event Content */}
             <div className="p-4">
-              <div className="flex flex-wrap gap-2 mb-2">
-                {event.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className={`px-2 py-1 text-xs rounded ${
-                      tag.toLowerCase() === "upcoming"
-                        ? "bg-orange-200 text-orange-700"
-                        : tag.toLowerCase() === "complete"
-                        ? "bg-green-200 text-green-700"
-                        : tag.toLowerCase() === "ongoing"
-                        ? "bg-blue-200 text-blue-700"
-                        : "bg-gray-200 text-gray-700"
-                    }`}
-                  >
-                    {tag}
-                  </span>
-                ))}
+              {/* Status Event */}
+              <div className="mb-2">
+                <span
+                  className={`px-2 py-1 text-xs rounded ${event.style}`}
+                >
+                  {event.status}
+                </span>
               </div>
+
+              {/* Detail Event */}
               <div className="flex flex-col gap-1 mt-5 text-black">
                 <h2 className="text-lg font-bold mb-2">{event.title}</h2>
                 <p className="text-[12px] text-gray-600 mb-2">
@@ -98,9 +125,9 @@ const EventPage = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };
 
 export default EventPage;
-  

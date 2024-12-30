@@ -4,8 +4,8 @@ const events = [
       slug: "international-conference-on-blockchain-and-cryptocurrency",
       title: "International Conference On Blockchain And Cryptocurrency",
       subtitle: "ICBC-2024",
-      date: "Dec 25, 2024",
-      countdownDate: "2024-12-25T09:00:00Z", // Waktu target countdown
+      date: "Jan 20, 2025",
+      countdownDate: "2025-01-20T09:00:00Z", // Waktu target countdown
       timezone: "UTC: +09:00",
       time: "09:00 am - 06:00 pm",
       location: "Ulsan, Busan 49210, South Korea",
