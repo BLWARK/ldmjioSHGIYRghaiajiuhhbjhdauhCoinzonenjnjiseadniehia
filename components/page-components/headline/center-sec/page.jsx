@@ -97,7 +97,7 @@ const Center = () => {
 
       {/* Additional News */}
       <div className="space-y-4 divide-y divide-gray-300">
-        {sortedAdditionalNews.map((news) => (
+        {sortedAdditionalNews.slice(0, 6).map((news) => (
           <div key={`${news.id}-${news.type}`} className="py-4 flex gap-4">
             <div className="relative 2xl:w-[250px] 2xl:h-[150px] w-[200px] h-[100px]">
               <Image

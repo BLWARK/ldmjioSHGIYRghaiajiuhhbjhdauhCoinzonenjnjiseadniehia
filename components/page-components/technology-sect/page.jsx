@@ -15,32 +15,25 @@ const technologyArticles = allArticles.filter((article) =>
   article.category?.includes("technology")
 );
 
+// Fungsi untuk membatasi jumlah kata
+const truncateWords = (text, maxWords) => {
+  const words = text.split(" ");
+  if (words.length > maxWords) {
+    return `${words.slice(0, maxWords).join(" ")}...`;
+  }
+  return text;
+};
+
 const TechnologySect = () => {
-  const [visibleItems, setVisibleItems] = useState(8); // State untuk jumlah berita yang ditampilkan
+  // State untuk mengontrol jumlah berita yang ditampilkan
+  const [visibleItems, setVisibleItems] = useState(4); // Default: 4 berita
 
   const loadMoreItems = () => {
-    setVisibleItems((prev) => prev + 4); // Tambahkan 4 item setiap kali tombol "See More" diklik
-  };
-
-   // Fungsi untuk membatasi jumlah karakter
-   const truncateText = (text, maxChars) => {
-    if (text.length > maxChars) {
-      return `${text.slice(0, maxChars)}...`;
-    }
-    return text;
-  };
-
-  // Fungsi untuk membatasi jumlah kata
-  const truncateWords = (text, maxWords) => {
-    const words = text.split(" ");
-    if (words.length > maxWords) {
-      return `${words.slice(0, maxWords).join(" ")}...`;
-    }
-    return text;
+    setVisibleItems((prev) => prev + 4); // Tambahkan 4 berita lagi
   };
 
   return (
-    <div className="container mx-auto py-4  text-black">
+    <div className="container mx-auto py-4 text-black">
       {/* Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {technologyArticles.slice(0, visibleItems).map((article) => (
@@ -63,11 +56,10 @@ const TechnologySect = () => {
             {/* Konten */}
             <div className="p-4">
               <h3
-                className="text-lg font-semibold mb-2 hover:underline cursor-pointer "
-                title={article.title} // Tooltip untuk menampilkan teks lengkap saat hover
+                className="text-lg font-semibold mb-2 hover:underline cursor-pointer"
+                title={article.title}
               >
-                {truncateWords(article.title, 15)} {/* Maksimal 10 kata */}
-                {/* {truncateText(article.title, 50)}  // Maksimal 50 karakter */}
+                {truncateWords(article.title, 10)} {/* Maksimal 10 kata */}
               </h3>
               <p className="2xl:text-sm text-xs text-gray-600">{article.date}</p>
             </div>
@@ -75,17 +67,7 @@ const TechnologySect = () => {
         ))}
       </div>
 
-      {/* Tombol "See More" */}
-      {/* {visibleItems < technologyArticles.length && (
-        <div className="mt-6 flex justify-center">
-          <button
-            onClick={loadMoreItems}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-          >
-            See More
-          </button>
-        </div>
-      )} */}
+     
     </div>
   );
 };

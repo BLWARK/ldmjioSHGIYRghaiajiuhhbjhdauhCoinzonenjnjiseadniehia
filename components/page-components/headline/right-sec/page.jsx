@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import popularNews from "@/../../data/popularNews";
 import editorChoice from "@/../../data/editorChoice";
@@ -20,8 +20,36 @@ const Right = () => {
   const sortedPopularNews = [...popularNews].sort(sortByDate);
   const sortedEditorChoice = [...editorChoice].sort(sortByDate);
 
+   const [showAd, setShowAd] = useState(true);
+
   return (
     <div className="lg:col-span-3">
+   {/* Advertisement Section */}
+           {showAd && (
+             <div className="relative w-full h-[430px] ">
+               {/* Label Advertisement with Close Button */}
+               <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white text-xs px-3 py-1 rounded flex items-center gap-2 z-10">
+                 <span>Ads</span>
+                 <button
+                   onClick={() => setShowAd(false)}
+                   className="text-white hover:text-red-500 transition"
+                 >
+                   ✕
+                 </button>
+               </div>
+   
+               {/* Gambar Advertisement */}
+               <div className="relative w-[340px] h-[400px] bg-black flex justify-center items-center">
+               <Image
+                 src="/Kinara1.webp"
+                 alt="Kinara Advertisement"
+                 className="rounded-lg"
+                 fill
+                 style={{ objectFit: "contain" }}
+               />
+               </div>
+             </div>
+           )}
       {/* Popular News */}
       <h2 className="text-2xl font-bold border-b pb-2 mb-4 text-main">
         Popular News

@@ -88,6 +88,48 @@ const additionalNews = [
       category: ["crypto", "bussiness", "technology",],
       authorIds: [3],
   },
+  {
+    id: 5,
+    title: "Floki Luncurkan Kartu Debit Kripto di Eropa, Dukung Pembayaran dengan Visa dan Mastercard",
+    type: "additional",
+    image: "/Add4.jpg",
+    date: "Dec 15 2024",
+    description:
+      "Floki Luncurkan Kartu Debit Kripto di Eropa, Dukung Pembayaran dengan Visa dan Mastercard",
+    slug: "Floki-Luncurkan-Kartu-Debit-Kripto-di-Eropa-Dukung-Pembayaran-dengan-Visa-dan-Mastercard",
+    content: `
+      <p>Floki, salah satu token meme yang semakin populer, baru saja mengumumkan peluncuran kartu debit kripto yang dapat digunakan di seluruh Eropa. Kartu debit ini memungkinkan pengguna untuk mengakses aset kripto mereka dan melakukan pembayaran di jutaan merchant yang menerima Visa dan Mastercard, menjadikannya salah satu inovasi penting dalam dunia kripto.</p>
+      <br>
+      <p>Dengan kemudahan penggunaan, kartu debit Floki mendukung transaksi menggunakan berbagai mata uang kripto, memperluas adopsi kripto di kalangan masyarakat. "Kami sangat antusias untuk memperkenalkan kartu debit kripto kami kepada masyarakat Eropa. Dengan dukungan Visa dan Mastercard, kami berharap dapat memudahkan pengguna untuk menghabiskan kripto mereka di kehidupan sehari-hari," ujar perwakilan dari Floki dalam peluncuran produk ini.</p>
+      <br>
+      <p>Langkah ini menjadi bagian dari upaya Floki untuk memperkuat ekosistem kripto dengan membuatnya lebih mudah diakses dan digunakan oleh khalayak umum. Dengan kartu debit ini, pengguna tidak hanya dapat melakukan transaksi di toko, tetapi juga menarik uang tunai dari ATM di seluruh dunia.</p>
+      <br>
+      `,
+      tags: ["Altcoin", "Crypto", "Technology"],
+      category: ["crypto", "bussiness", "technology",],
+      authorIds: [3],
+  },
+  {
+    id: 6,
+    title: "Floki Luncurkan Kartu Debit Kripto di Eropa, Dukung Pembayaran dengan Visa dan Mastercard",
+    type: "additional",
+    image: "/Add4.jpg",
+    date: "Dec 15 2024",
+    description:
+      "Floki Luncurkan Kartu Debit Kripto di Eropa, Dukung Pembayaran dengan Visa dan Mastercard",
+    slug: "Floki-Luncurkan-Kartu-Debit-Kripto-di-Eropa-Dukung-Pembayaran-dengan-Visa-dan-Mastercard",
+    content: `
+      <p>Floki, salah satu token meme yang semakin populer, baru saja mengumumkan peluncuran kartu debit kripto yang dapat digunakan di seluruh Eropa. Kartu debit ini memungkinkan pengguna untuk mengakses aset kripto mereka dan melakukan pembayaran di jutaan merchant yang menerima Visa dan Mastercard, menjadikannya salah satu inovasi penting dalam dunia kripto.</p>
+      <br>
+      <p>Dengan kemudahan penggunaan, kartu debit Floki mendukung transaksi menggunakan berbagai mata uang kripto, memperluas adopsi kripto di kalangan masyarakat. "Kami sangat antusias untuk memperkenalkan kartu debit kripto kami kepada masyarakat Eropa. Dengan dukungan Visa dan Mastercard, kami berharap dapat memudahkan pengguna untuk menghabiskan kripto mereka di kehidupan sehari-hari," ujar perwakilan dari Floki dalam peluncuran produk ini.</p>
+      <br>
+      <p>Langkah ini menjadi bagian dari upaya Floki untuk memperkuat ekosistem kripto dengan membuatnya lebih mudah diakses dan digunakan oleh khalayak umum. Dengan kartu debit ini, pengguna tidak hanya dapat melakukan transaksi di toko, tetapi juga menarik uang tunai dari ATM di seluruh dunia.</p>
+      <br>
+      `,
+      tags: ["Altcoin", "Crypto", "Technology"],
+      category: ["crypto", "bussiness", "technology",],
+      authorIds: [3],
+  },
   
   
 ];
